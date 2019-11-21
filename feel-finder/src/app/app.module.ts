@@ -2,12 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements'
 import { FeelFinderComponent } from './feel-finder/feel-finder.component';
-import { FeelingComponent } from './feeling/feeling.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContentComponent } from './content/content.component';
+import { FeelingCardComponent } from './feeling-card/feeling-card.component';
 
 @NgModule({
   declarations: [
     FeelFinderComponent,
-    FeelingComponent,
+    HeaderComponent,
+    FooterComponent,
+    ContentComponent,
+    FeelingCardComponent,
     
   ],
   imports: [
