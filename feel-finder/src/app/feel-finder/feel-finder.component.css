@@ -1,4 +1,47 @@
-div{
+html * {
+    font-family: 'OpenSans-SemiBold', 'Open Sans SemiBold', 'Open Sans';
+}
+
+
+.feel-finder-content-wrapper{
+    display: flex;
+    flex-direction: column;
+
     border: 2px solid black;
-    height: 100%;
+    min-height: 100%;
+}
+
+.header-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 75px;
+    order: 1;
+}
+
+.content-content-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: rgba(243, 243, 243, 1);
+
+
+    order: 2;
+    flex-grow: 1;
+}
+
+.footer-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    
+    height: 75px;
+    border: 1px solid black;
+    order: 3;
 }

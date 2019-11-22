@@ -1,0 +1,11 @@
+.card-content-wrapper{
+    margin: 15px;
+}
+
+.thoughts-wrapper{
+    background-color: rgba(255, 255, 255, 1);
+    min-height: 280px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 5px rgba(140, 140, 140, 1);
+}
+
