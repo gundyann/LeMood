@@ -2,7 +2,7 @@
     <div class="thoughts-wrapper">
             <p>Card Content comes Here</p>
     </div>
-    <div class="feeling-wrapper">
-        <H1>Gefühltitel</H1>
+    <div [ngClass]="calculateClasses()" (click)="toggleState()">
+        <H1 class="feeling-title">Gefühltitel</H1>
     </div>
 </div>

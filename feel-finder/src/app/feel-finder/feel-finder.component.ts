@@ -12,16 +12,5 @@ export class FeelFinderComponent implements OnInit {
 
   ngOnInit() {
   }
-    
-  testfunction(event : any){
-    console.log("Test works");
-    if(event.target.style.backgroundColor != 'green'){
-      event.target.style.backgroundColor = 'green';
-    } else {
-      event.target.style.backgroundColor = 'blue';
-    }
-    
-    
-  }
 
 }

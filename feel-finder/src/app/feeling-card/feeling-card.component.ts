@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeelingCardComponent implements OnInit {
 
-  constructor() { }
+  stateFlag = false;
 
-  ngOnInit() {
+
+  constructor() {    
+   }
+
+  ngOnInit() {    
   }
+
+  
+  toggleState() {
+    this.stateFlag = !this.stateFlag;
+  }
+
+  calculateClasses(){
+    return {      
+      'feeling-wrapper': true,
+      'feeling-wrapper-unfolded': this.stateFlag,
+      'feeling-wrapper-closed': !this.stateFlag
+  };
+  }
+
+
 
 }
