@@ -1,61 +1,70 @@
 .card-content-wrapper{
-    overflow: overlay;
     margin: 15px;
+    display: grid;
+    grid-template-rows: 100%;
+
+    flex-grow: 1;
 }
 
-.thoughts-wrapper{
+.thoughts-and-feelings-wrapper{
     background-color: rgba(255, 255, 255, 1);
-    min-height: 280px;
     border-radius: 3px;
-    box-shadow: 0px 3px 5px rgba(140, 140, 140, 1);
+
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.feeling-wrapper{
+.thoughts-of-feeling{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.base-feeling-wrapper{
     min-height: 80px;
     line-height: 80px;
     text-align: center;
-    margin-top: 15px;
     background-color: #FC7307;
 }
-
-.feeling-wrapper-unfolded{
-    animation-name: moveUp;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
-.feeling-wrapper-closed{
-    animation-name: moveDown;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
-
+   
 .feeling-title{
     color: white;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-p{
-    margin-top: 0px;
+.animation-wrapper{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.animation-move-up{
+    animation-name: moveUp;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-move-down{
+    animation-name: moveDown;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
 }
 
 @keyframes moveUp{
     from{
-        transform: translateY(0px);
+        transform: translateY(291px);
     }
     to{
-     transform: translateY(-310px);
+     transform: translateY(0px);
      animation-timing-function: ease;
- }
+   }
 }
 
 @keyframes moveDown{
     from{
-        transform: translateY(-310px);
+        transform: translateY(0%);
     }
     to{
-     transform: translateY(0px);
+     transform: translateY(291px);
      animation-timing-function: ease;
  }
 }

@@ -1,8 +1,12 @@
 <div class="card-content-wrapper">
-    <div class="thoughts-wrapper">
-            <p>Card Content comes Here</p>
+    <div class="thoughts-and-feelings-wrapper">
+            <span class="thoughts-of-feeling">Card Content comes Here</span>
     </div>
-    <div [ngClass]="calculateClasses()" (click)="toggleState()">
-        <H1 class="feeling-title">Gefühltitel</H1>
-    </div>
+
+    <div  [ngClass]="calculateClassesForAnimation()">
+        <div class="base-feeling-wrapper" (click)="toggleAnimation()">
+            <H1 class="feeling-title">Gefühltitel</H1>
+        </div>
+    </div> 
+
 </div>

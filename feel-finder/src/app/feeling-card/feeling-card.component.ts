@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeelingCardComponent implements OnInit {
 
-  stateFlag = false;
+  animationFlag = false;
 
 
   constructor() {    
@@ -17,15 +17,15 @@ export class FeelingCardComponent implements OnInit {
   }
 
   
-  toggleState() {
-    this.stateFlag = !this.stateFlag;
+  toggleAnimation() {
+    this.animationFlag = !this.animationFlag;
   }
 
-  calculateClasses(){
+  calculateClassesForAnimation(){
     return {      
-      'feeling-wrapper': true,
-      'feeling-wrapper-unfolded': this.stateFlag,
-      'feeling-wrapper-closed': !this.stateFlag
+      'animation-wrapper': true,
+      'animation-move-up': this.animationFlag,
+      'animation-move-down': !this.animationFlag
   };
   }
 
