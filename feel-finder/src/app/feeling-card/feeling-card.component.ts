@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 @Component({
   selector: 'custom-feeling-card',
@@ -7,28 +7,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeelingCardComponent implements OnInit {
 
-  animationFlag = false;
+  stateFlag = true;
 
+  @Input()
+  cardStyle: any;
 
-  constructor() {    
-   }
+  @Input()
+  thoughts: string[]; //Array mit allen Gefühlen, hier kann ausgelesen werden und angezeigt werden. Wird nicht verändert
 
-  ngOnInit() {    
+  @Input()
+  feelings: string[]; //Array mit allen untergefühlen, hier kann ausgelesen werden und angezeigt werden. Wird nicht verändert
+
+  cardContent: string[]; //Der aktuell angezeigte Content der Karte
+
+  @Input()
+  feelTitle: string;  //Der Titel der Karte, das Grundgefühl
+
+  constructor() {
+    //Hier das JSON auslesen und die CSS Styles sowie die inhalte vereilen.
+    // this.thoughts = ['Dies ist ein Test', 'Dies ist ein Gedanke', 'Ich mag Züge'];
+    // this.feelings = ['Panik', 'Angst', 'Furcht', 'Aggression'];
+    // this.feelTitle = "Angst";
   }
 
-  
-  toggleAnimation() {
-    this.animationFlag = !this.animationFlag;
+  ngOnInit() {
   }
 
-  calculateClassesForAnimation(){
-    return {      
+  switchState() {
+    this.stateFlag = !this.stateFlag;  
+  }
+
+  calculateClassesForMovingTitle() {
+    return {
       'animation-wrapper': true,
-      'animation-move-up': this.animationFlag,
-      'animation-move-down': !this.animationFlag
-  };
+      'animation-move-up': !this.stateFlag,
+      'animation-move-down': this.stateFlag
+    };
   }
 
+  calculateClassesForThougts(){
+    return {
+      'animation-fade-in': this.stateFlag,   
+      'animation-fade-out': !this.stateFlag
+    };
+  }
 
-
+  calculateClassesForFeelings(){
+    return {
+      'content-centered' : true,   
+      'animation-fade-in': !this.stateFlag,   
+      'animation-fade-out': this.stateFlag
+    };
+  }
 }

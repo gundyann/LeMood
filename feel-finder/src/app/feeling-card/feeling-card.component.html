@@ -1,12 +1,24 @@
-<div class="card-content-wrapper">
-    <div class="thoughts-and-feelings-wrapper">
-            <span class="thoughts-of-feeling">Card Content comes Here</span>
-    </div>
-
-    <div  [ngClass]="calculateClassesForAnimation()">
-        <div class="base-feeling-wrapper" (click)="toggleAnimation()">
-            <H1 class="feeling-title">Gefühltitel</H1>
+<div class="background-color-wrapper" [ngStyle]="cardStyle">
+    <div class="card-content-wrapper">
+        <div class="thoughts-and-feelings-wrapper">
+            <div [ngClass]="calculateClassesForThougts()">   
+                <ul>
+                    <li *ngFor="let thought of thoughts">{{thought}}</li>
+                </ul>
+            </div>       
         </div>
-    </div> 
+        <div class="thoughts-and-feelings-wrapper">
+                <div [ngClass]="calculateClassesForFeelings()">   
+                        <ul>
+                            <li *ngFor="let feeling of feelings">{{feeling}}</li>
+                        </ul>
+                </div>
+        </div>
 
+        <div [ngClass]="calculateClassesForMovingTitle()">
+            <div class="base-feeling-wrapper" [ngStyle]="cardStyle" (click)="switchState()">
+                <H1 class="feeling-title">{{feelTitle}}</H1>
+            </div>
+        </div> 
+    </div>
 </div>

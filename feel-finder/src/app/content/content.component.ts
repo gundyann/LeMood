@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  cards : any[];
+
+
+  constructor() {
+    this.cards = [];
+    this.cards.push({title:"Angst", thoughts:['Fuck', 'Isch', 'Ds', 'Geil'], feelings:['Send', 'Nudes'], style:{"background-color": '#FC7307'}});
+    this.cards.push({title:"Freude", thoughts:['Eppstein'], feelings:['Didnt', 'kill', 'himself'], style:{"background-color": '#333333'}});
+
+   }
 
   ngOnInit() {
   }

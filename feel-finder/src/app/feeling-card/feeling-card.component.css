@@ -1,3 +1,15 @@
+ul{
+    padding: 0%;
+    list-style: none;
+}
+
+.background-color-wrapper{
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+}
+
 .card-content-wrapper{
     margin: 15px;
     display: grid;
@@ -23,7 +35,6 @@
     min-height: 80px;
     line-height: 80px;
     text-align: center;
-    background-color: #FC7307;
 }
    
 .feeling-title{
@@ -35,6 +46,27 @@
 .animation-wrapper{
     grid-row: 1;
     grid-column: 1;
+}
+
+.content-centered{
+    padding-top: 80px;
+}
+
+.animation-fade-in{
+    opacity: 0;
+
+    animation-name: fadeIn;
+    animation-delay: 220ms;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-fade-out{
+    opacity: 1;
+
+    animation-name: fadeOut;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
 }
 
 .animation-move-up{
@@ -67,5 +99,23 @@
      transform: translateY(291px);
      animation-timing-function: ease;
  }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
