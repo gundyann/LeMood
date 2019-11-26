@@ -14,7 +14,6 @@ import { FeelingCardComponent } from './feeling-card/feeling-card.component';
     FooterComponent,
     ContentComponent,
     FeelingCardComponent,
-    
   ],
   imports: [
     BrowserModule
@@ -30,6 +29,6 @@ export class AppModule {
     customElements.define('feel-finder', feelfinder);
   }
 
-  ngDoBootStrap() { };
+  ngDoBootStrap() { }
 
 }
