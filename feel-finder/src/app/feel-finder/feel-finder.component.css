@@ -1,12 +1,32 @@
-html * {
-    font-family: 'OpenSans-SemiBold', 'Open Sans SemiBold', 'Open Sans';
+/* Load Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+/* Font-sizes */
+html, body, *{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #595654;
+    font-weight: 400;
+}
+h1{
+    font-size: 26px;
+    font-weight: 800;
+}
+h2,h3{
+    font-weight: 600;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 14px;
 }
 
 
+/* Content */
 .feel-finder-content-wrapper{
     display: flex;
     flex-direction: column;
-
     border: 2px solid black;
     min-height: 100%;
 }
