@@ -1,1 +1,20 @@
+.header-policy.button-blue{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    padding: 0px;
+    font-family: Georgia;
+    font-size: 14px;
+}
 
+.header-spacing-box{
+    flex: 1 1 0px;
+    display: flex;
+    justify-content: center;
+}
+.header-spacing-box:first-child{
+    justify-content: flex-start;
+}
+.header-spacing-box:last-child{
+    justify-content: flex-end;
+}

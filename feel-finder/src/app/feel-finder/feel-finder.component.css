@@ -2,12 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
 
 /* Font-sizes */
+html, body{
+    color: #595654;
+}
 html, body, *{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    color: #595654;
     font-weight: 400;
 }
+
 h1{
     font-size: 26px;
     font-weight: 800;
@@ -22,23 +25,70 @@ h3{
     font-size: 14px;
 }
 
+/* Abstände */
+.header-content-wrapper,
+.content-content-wrapper,
+.footer-content-wrapper {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+ul{
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+li{
+    flex: 0 50%;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+/* Buttons */
+.button-white, .button-blue{
+    text-decoration: none;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 12px;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.button-blue{
+    background-color: #4192D9;
+    color: #ffffff;
+}
+.button-white{
+    background-color: #ffffff;
+    color: #4192D9;
+}
 
 /* Content */
 .feel-finder-content-wrapper{
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
     min-height: 100%;
+}
+
+/* Ebenen definition für Schatten von Footer & Header */
+.header-content-wrapper,
+.footer-content-wrapper {
+    z-index: 2;
 }
 
 .header-content-wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    
     min-height: 75px;
     order: 1;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
+    box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
 }
 
 .content-content-wrapper{
@@ -46,10 +96,8 @@ h3{
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-
+    justify-content: center;
     background-color: rgba(243, 243, 243, 1);
-
-
     order: 2;
     flex-grow: 1;
 }
@@ -59,9 +107,9 @@ h3{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
-    
     min-height: 75px;
-    border: 1px solid black;
     order: 3;
+    -webkit-box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
+    -moz-box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
+    box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
 }

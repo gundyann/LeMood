@@ -7,13 +7,12 @@ ul{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 15px;
 }
 
 .card-content-wrapper{
-    margin: 15px;
     display: grid;
     grid-template-rows: 100%;
-
     flex-grow: 1;
 }
 
@@ -35,6 +34,7 @@ ul{
     line-height: 80px;
     text-align: center;
 }
+
    
 .feeling-title{
     color: white;
@@ -46,14 +46,26 @@ ul{
     grid-row: 1;
     grid-column: 1;
 }
+.content-thoughts{
 
-.content-centered{
+}
+.content-feelings ul{
     padding-top: 80px;
+}
+.content-feelings ul li .list-item{
+    font-size: 12px;
+    color: #595654;
+}
+
+.content-feelings ul li::before {
+    content: "\2022"; /* unicode for a bullet */
+    font-weight: 800;
+    width: 12px;
+    margin-left: 0px;
 }
 
 .animation-fade-in{
     opacity: 0;
-
     animation-name: fadeIn;
     animation-delay: 220ms;
     animation-duration: 500ms;
@@ -62,7 +74,6 @@ ul{
 
 .animation-fade-out{
     opacity: 1;
-
     animation-name: fadeOut;
     animation-duration: 250ms;
     animation-fill-mode: forwards;
@@ -82,7 +93,7 @@ ul{
 
 @keyframes moveUp{
     from{
-        transform: translateY(291px);
+        transform: translateY(321px);
     }
     to{
      transform: translateY(0px);
@@ -95,7 +106,7 @@ ul{
         transform: translateY(0%);
     }
     to{
-     transform: translateY(291px);
+     transform: translateY(321px);
      animation-timing-function: ease;
  }
 }

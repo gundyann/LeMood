@@ -1,4 +1,4 @@
-<div class="background-color-wrapper" [ngStyle]="cardStyle">
+<div class="background-color-wrapper" [ngStyle]="backgroundStyle">
     <div class="card-content-wrapper">
         <div class="thoughts-and-feelings-wrapper">
             <div [ngClass]="calculateClassesForThougts()">   
@@ -9,14 +9,16 @@
         </div>
         <div class="thoughts-and-feelings-wrapper">
                 <div [ngClass]="calculateClassesForFeelings()">   
-                        <ul>
-                            <li *ngFor="let feeling of feelings">{{feeling}}</li>
+                        <ul [ngStyle]="dotStyle">
+                            <li *ngFor="let feeling of feelings">
+                                <div class="list-item">{{feeling}}</div>
+                            </li>
                         </ul>
                 </div>
         </div>
 
-        <div [ngClass]="calculateClassesForMovingTitle()">
-            <div class="base-feeling-wrapper" [ngStyle]="cardStyle" (click)="switchState()">
+        <div class="animation-wrapper">
+            <div [ngClass]="calculateClassesForMovingTitle()" [ngStyle]="backgroundStyle" (click)="switchState()">
                 <H1 class="feeling-title">{{feelTitle}}</H1>
             </div>
         </div> 
