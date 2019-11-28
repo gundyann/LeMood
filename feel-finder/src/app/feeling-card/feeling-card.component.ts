@@ -27,10 +27,6 @@ export class FeelingCardComponent implements OnInit {
   feelTitle: string;  // Der Titel der Karte, das Grundgefühl
 
   constructor() {
-    // Hier das JSON auslesen und die CSS Styles sowie die inhalte vereilen.
-    // this.thoughts = ['Dies ist ein Test', 'Dies ist ein Gedanke', 'Ich mag Züge'];
-    // this.feelings = ['Panik', 'Angst', 'Furcht', 'Aggression'];
-    // this.feelTitle = "Angst";
   }
 
   ngOnInit() {

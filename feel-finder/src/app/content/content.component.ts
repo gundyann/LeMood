@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CardData } from '../card-data';
+import cardData from './gefuehlsfinder.json';
+
+
 
 @Component({
   selector: 'custom-content',
@@ -7,16 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  cards : any[];
+  cards: any[];
+  test: any[];
 
   constructor() {
     this.cards = [];
-    this.cards.push({title:"Angst", thoughts:['"Es ist war falsch"', '"Das darf man nicht"','"Das macht man nicht"','"Es ist/war nicht richt"',], feelings:['skeptisch', 'Zweifel haben', 'misstrauisch', 'besorgt', 'irritiert', 'durcheinander', 'verwirrt', 'ungeduldig', 'aufgeregt', 'angespannt', 'aufgewühlt', 'unruhig', 'nervös', 'gehemmt', 'unsicher', 'verunsichert', 'übervordert', 'überlastet', 'gestresst', 'eifersüchtig', 'entsetzt', 'schockiert', 'Angst haben', 'ängstlich'], backgroundStyle:{"background-color": '#FC7307'}, dotStyle:{"color": '#FF00FF'}});
-    this.cards.push({title:"Freude", thoughts:['Eppstein'], feelings:['Didnt', 'kill', 'himself'], backgroundStyle:{"background-color": '#333333'}, dotStyle:{"color": '#FF00FF'}});
-
    }
 
   ngOnInit() {
+    cardData.list.forEach(element => {
+      const card: CardData = new CardData(element.name);
+      card.setThoughts(element.thoughts);
+      card.setStyle({'background-color': element.color});
+
+      const feeling: string[] = [];
+      element.feelings.forEach(e => {
+        feeling.push(e.name);
+      });
+      card.setFeelings(feeling);
+      this.cards.push(card);
+    });
   }
 
 }
