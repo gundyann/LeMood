@@ -1,0 +1,441 @@
+{
+ "list": [
+    {
+      "name": "Angst, Stress",
+      "color": "#DE383A",
+      "needsMet": false,
+      "thoughts": [
+        "Es wird etwas schief gehen.",
+        "Ich werde versagen.",
+        "Das ist/wird gefährlich.",
+        "Das ist/wird schlimm."
+      ],
+      "feelings": [
+        {
+          "name": "Angst haben",
+          "important": true
+        },
+        {
+          "name": "ängstlich",
+          "important": true
+        },
+        {
+          "name": "entsetzt"
+        },
+        {
+          "name": "skeptisch"
+        },
+        {
+          "name": "Zweifel haben"
+        },
+        {
+          "name": "misstrauisch"
+        },
+        {
+          "name": "besorgt"
+        },
+        {
+          "name": "irritiert"
+        },
+        {
+          "name": "durcheinander"
+        },
+        {
+          "name": "verwirrt"
+        },
+        {
+          "name": "ungeduldig"
+        },
+        {
+          "name": "schockiert"
+        },
+        {
+          "name": "aufgeregt"
+        },
+        {
+          "name": "angespannt"
+        },
+        {
+          "name": "aufgewühlt"
+        },
+        {
+          "name": "unruhig"
+        },
+        {
+          "name": "nervös"
+        },
+        {
+          "name": "gehemmt"
+        },
+        {
+          "name": "unsicher"
+        },
+        {
+          "name": "verunsichert"
+        },
+        {
+          "name": "überfordert"
+        },
+        {
+          "name": "überlastet"
+        },
+        {
+          "name": "gestresst"
+        },
+        {
+          "name": "eifersüchtig"
+        }
+      ]
+    },
+    {
+      "name": "Hoffnungslosigkeit",
+      "color": "#2E203A",
+      "needsMet": false,
+      "thoughts": [
+        "Man kann nichts tun.",
+        "Das lässt sich nicht ändern.",
+        "Das ist unmöglich."
+      ],
+      "feelings": [
+        {
+          "name": "hoffnungslos",
+          "important": true
+        },
+        {
+          "name": "verzweifelt"
+        },
+        {
+          "name": "deprimiert"
+        },
+        {
+          "name": "mutlos"
+        }
+      ]
+    },
+    {
+      "name": "Ohnmacht",
+      "color": "#EC3C2D",
+      "needsMet": false,
+      "thoughts": [
+        "Ich kann nichts tun.",
+        "Ich kann das nicht ändern."
+      ],
+      "feelings": [
+        {
+          "name": "ohnmächtig",
+          "important": true
+        },
+        {
+          "name": "hilflos"
+        },
+        {
+          "name": "machtlos"
+        },
+        {
+          "name": "überlastet"
+        },
+        {
+          "name": "überfordert"
+        },
+        {
+          "name": "gelähmt"
+        },
+        {
+          "name": "blockiert"
+        }
+      ]
+    },
+    {
+      "name": "Scham",
+      "color": "#F18DA5",
+      "needsMet": false,
+      "thoughts": [
+        "Ich bin falsch.",
+        "Mit mir stimmt was nicht.",
+        "Ich bin nicht in Ordnung."
+      ],
+      "feelings": [
+        {
+          "name": "sich schämen",
+          "important": true
+        },
+        {
+          "name": "peinlich berührt"
+        }
+      ]
+    },
+    {
+      "name": "Trauer",
+      "color": "#826E70",
+      "needsMet": false,
+      "thoughts": [
+        "Ich bekommen das Verlorene/ das, was ich ich brauche, nie wieder."
+      ],
+      "feelings": [
+        {
+          "name": "traurig",
+          "important": true
+        },
+        {
+          "name": "betrübt"
+        },
+        {
+          "name": "enttäuscht"
+        },
+        {
+          "name": "bedrückt"
+        },
+        {
+          "name": "etwas bedauern"
+        }
+      ]
+    },
+    {
+      "name": "Ärger, Wut",
+      "color": "#E24015",
+      "needsMet": false,
+      "thoughts": [
+        "Es ist/war falsch.",
+        "Das darf man nicht.",
+        "Das macht man nicht.",
+        "Es ist/war nicht richtig."
+      ],
+      "feelings": [
+        {
+          "name": "ängstlich",
+          "important": true
+        },
+        {
+          "name": "wütend",
+          "important": true
+        },
+        {
+          "name": "hasserfüllt"
+        },
+        {
+          "name": "zornig"
+        },
+        {
+          "name": "bestürzt"
+        },
+        {
+          "name": "fassungslos"
+        },
+        {
+          "name": "entrüstet"
+        },
+        {
+          "name": "erschüttert"
+        },
+        {
+          "name": "empört"
+        },
+        {
+          "name": "geladen"
+        },
+        {
+          "name": "aufgebracht"
+        },
+        {
+          "name": "die Nase voll haben"
+        },
+        {
+          "name": "etwas satt haben"
+        },
+        {
+          "name": "widerwillig"
+        },
+        {
+          "name": "trotzig"
+        },
+        {
+          "name": "beleidigt"
+        },
+        {
+          "name": "genervt"
+        },
+        {
+          "name": "gereizt"
+        }
+      ]
+    },
+    {
+      "name": "Freude, Glück",
+      "color": "#54C258",
+      "needsMet": true,
+      "thoughts": [
+        "Das ist so schön.",
+        "Das ist richtig/gut.",
+        "Das ist genau, was ich brauche."
+      ],
+      "feelings": [
+        {
+          "name": "erfreut",
+          "important": true
+        },
+        {
+          "name": "glücklich",
+          "important": true
+        },
+        {
+          "name": "motiviert"
+        },
+        {
+          "name": "dankbar"
+        },
+        {
+          "name": "erfüllt"
+        },
+        {
+          "name": "zufrieden"
+        },
+        {
+          "name": "begeistert"
+        },
+        {
+          "name": "sicher"
+        },
+        {
+          "name": "berührt"
+        },
+        {
+          "name": "angetan"
+        },
+        {
+          "name": "inspiriert"
+        },
+        {
+          "name": "interessiert"
+        },
+        {
+          "name": "ausgeglichen"
+        },
+        {
+          "name": "entspannt"
+        },
+        {
+          "name": "beruhigt"
+        },
+        {
+          "name": "erleichtert"
+        }
+      ]
+    },
+    {
+      "name": "Frust",
+      "color": "#4CB79B",
+      "needsMet": false,
+      "thoughts": [
+        "Meine Mühe wird sinnlos/wirkungslos sein."
+      ],
+      "feelings": [
+        {
+          "name": "frustriert",
+          "important": true
+        },
+        {
+          "name": "resigniert"
+        },
+        {
+          "name": "verbittert"
+        },
+        {
+          "name": "entmutigt"
+        },
+        {
+          "name": "un-/demotiviert"
+        }
+      ]
+    },
+    {
+      "name": "Unzufriedenheit",
+      "color": "#F0882B",
+      "needsMet": false,
+      "thoughts": [
+        "Es ist nicht so wie es sein soll."
+      ],
+      "feelings": [
+        {
+          "name": "unzufrieden",
+          "important": true
+        },
+        {
+          "name": "schlecht gelaunt"
+        },
+        {
+          "name": "unbefriedigt"
+        }
+      ]
+    },
+    {
+      "name": "Schuld",
+      "color": "#964273",
+      "needsMet": false,
+      "thoughts": [
+        "Ich habe etwas falsch gemacht.",
+        "Ich bin schuld daran.",
+        "Das liegt/lag an mir."
+      ],
+      "feelings": [
+        {
+          "name": "schuldig",
+          "important": true
+        },
+        {
+          "name": "verpflichtet"
+        },
+        {
+          "name": "verantwortlich"
+        }
+      ]
+    },
+    {
+      "name": "Einsamkeit",
+      "color": "#1E67AB",
+      "needsMet": false,
+      "thoughts": [
+        "Keiner wird sich für mich interessieren.",
+        "Niemand wird für mich da sein."
+      ],
+      "feelings": [
+        {
+          "name": "einsam",
+          "important": true
+        }
+      ]
+    },
+    {
+      "name": "Gleichgültigkeit",
+      "color": "#41ADC4",
+      "needsMet": false,
+      "thoughts": [
+        "Das ist (mir) nicht wichtig.",
+        "Ich brauche das nicht."
+      ],
+      "feelings": [
+        {
+          "name": "gleichgültig",
+          "important": true
+        },
+        {
+          "name": "desinteressiert"
+        },
+        {
+          "name": "gelangweilt"
+        },
+        {
+          "name": "angeödet"
+        },
+        {
+          "name": "lustlos"
+        },
+        {
+          "name": "teilnahmslos"
+        },
+        {
+          "name": "gefühllos"
+        }
+      ]
+    }
+  ]
+}
