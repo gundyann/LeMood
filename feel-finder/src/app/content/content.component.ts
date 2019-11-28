@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CardData } from '../card-data';
+import cardData from './gefuehlsfinder.json';
+
+
 
 @Component({
   selector: 'custom-content',
@@ -7,17 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  cards : any[];
+  cards: any[];
+  test: any[];
 
 
   constructor() {
     this.cards = [];
-    this.cards.push({title:"Angst", thoughts:['Fuck', 'Isch', 'Ds', 'Geil'], feelings:['Send', 'Nudes'], style:{"background-color": '#FC7307'}});
-    this.cards.push({title:"Freude", thoughts:['Eppstein'], feelings:['Didnt', 'kill', 'himself'], style:{"background-color": '#333333'}});
-
    }
 
   ngOnInit() {
+    cardData.list.forEach(element => {
+      const card: CardData = new CardData(element.name);
+      card.setThoughts(element.thoughts);
+      card.setStyle({'background-color': element.color});
+
+      const feeling: string[] = [];
+      element.feelings.forEach(e => {
+        feeling.push(e.name);
+      });
+      card.setFeelings(feeling);
+      this.cards.push(card);
+    });
   }
 
 }
