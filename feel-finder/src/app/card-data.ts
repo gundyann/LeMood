@@ -5,7 +5,9 @@ export class CardData {
     title: string;
     feelings: string[];
     thoughts: string[];
-    style: any;
+    backgroundStyle: any;
+    dotStyle: any;
+
 
     constructor(title: string) {
         this.title = title;
@@ -18,8 +20,11 @@ export class CardData {
     setThoughts(thoughts: string[]): void {
         this.thoughts = thoughts;
     }
-    setStyle(style: any): void {
-        this.style = style;
+    setBackgroundstyle(backgroundStyle: any): void {
+        this.backgroundStyle = backgroundStyle;
+    }
+    setDotStyle(dotStyle: any): void {
+        this.dotStyle = dotStyle;
     }
 }
 

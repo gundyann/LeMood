@@ -22,7 +22,8 @@ export class ContentComponent implements OnInit {
     cardData.list.forEach(element => {
       const card: CardData = new CardData(element.name);
       card.setThoughts(element.thoughts);
-      card.setStyle({'background-color': element.color});
+      card.setBackgroundstyle({'background-color': element.color});
+      card.setDotStyle({'color': element.color});
 
       const feeling: string[] = [];
       element.feelings.forEach(e => {
