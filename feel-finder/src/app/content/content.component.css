@@ -17,6 +17,7 @@
     margin-right: 15px;
     background-image: url("/feel-finder/src/images/left_arrow.svg");
     background-repeat: no-repeat;
+    padding-right: 25px;
 }
 .right-arrow-wrapper{
     width: 25px;
@@ -24,17 +25,15 @@
     margin-left: 15px;
     background-image: url("/feel-finder/src/images/right_arrow.svg");
     background-repeat: no-repeat;
+    padding-left: 25px;
 }
 
 .card-wrapper{
-    width: 250px;   
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
     overflow-y: hidden;
     flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
 }
 .card-wrapper::-webkit-scrollbar {
     display: none;

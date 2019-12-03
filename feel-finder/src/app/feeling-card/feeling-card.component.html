@@ -1,13 +1,13 @@
 <div class="background-color-wrapper" [ngStyle]="backgroundStyle">
     <div class="card-content-wrapper">
-        <div class="thoughts-and-feelings-wrapper">
+        <div class="thoughts-wrapper">
             <div [ngClass]="calculateClassesForThougts()">   
                 <ul>
                     <li *ngFor="let thought of thoughts">{{thought}}</li>
                 </ul>
             </div>       
         </div>
-        <div class="thoughts-and-feelings-wrapper">
+        <div class="feelings-wrapper">
                 <div [ngClass]="calculateClassesForFeelings()">   
                         <ul [ngStyle]="dotStyle">
                             <li *ngFor="let feeling of feelings">

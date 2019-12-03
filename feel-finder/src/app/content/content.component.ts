@@ -25,13 +25,28 @@ export class ContentComponent implements OnInit {
       card.setBackgroundstyle({'background-color': element.color});
       card.setDotStyle({'color': element.color});
 
-      const feeling: string[] = [];
+      var feeling: string[] = [];
       element.feelings.forEach(e => {
         feeling.push(e.name);
+      });
+      feeling.sort(function(a, b){
+        return a.length - b.length;
       });
       card.setFeelings(feeling);
       this.cards.push(card);
     });
+    this.shuffle(this.cards);
+  }
+
+    shuffle(a: CardData[]) {
+      var j :number, x :CardData, i :number;
+      for (i = a.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          x = a[i];
+          a[i] = a[j];
+          a[j] = x;
+      }
+      return a;
   }
 
 }
