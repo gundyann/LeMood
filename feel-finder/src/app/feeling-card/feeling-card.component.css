@@ -66,6 +66,21 @@ li{
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.feeling-title::after {
+    font-weight: 800;
+    width: auto;
+    position: absolute;
+    right: -10px;
+    font-size: 15px;
+}
+.animation-move-down .feeling-title::after {
+    content: "\2934"; /* unicode for an arrow */
+    bottom: 5px;
+}
+.animation-move-up .feeling-title::after {
+    content: "\2935"; /* unicode for an arrow */
+    top: 5px;
+}
 
 .animation-wrapper{
     grid-row: 1;
