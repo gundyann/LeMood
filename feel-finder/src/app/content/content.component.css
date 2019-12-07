@@ -38,3 +38,16 @@
 .card-wrapper::-webkit-scrollbar {
     display: none;
 }
+
+@media only screen and (max-width:450px) {
+    .card{
+        height: auto;
+    }
+    .card-wrapper{
+        max-height: 375px;
+    }
+    .left-arrow-wrapper,
+    .right-arrow-wrapper{
+        display: none;
+    }
+}

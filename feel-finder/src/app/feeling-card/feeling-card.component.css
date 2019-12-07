@@ -1,6 +1,25 @@
 ul{
     padding: 0%;
     list-style: none;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+li{
+
+}
+.content-feelings li{
+    display: flex;
+    flex: 0 50%;
+    margin-bottom: 5px; 
+    text-align: left;
+}
+.content-thoughts li{
+    display: list-item;
+    margin-bottom: 15px; 
+    width: 100%;
+    min-width: 100%;
 }
 
 .background-color-wrapper{
@@ -135,3 +154,35 @@ ul{
     }
 }
 
+@media only screen and (max-width:450px) {
+    @keyframes moveUp{
+        from{
+            transform: translateY(297px);
+        }
+        to{
+         transform: translateY(-15px);
+         animation-timing-function: ease;
+       }
+    }
+    
+    @keyframes moveDown{
+        from{
+            transform: translateY(-15px);
+        }
+        to{
+         transform: translateY(297px);
+         animation-timing-function: ease;
+     }
+    }
+    .base-feeling-wrapper{
+        min-height: 50px;
+        line-height: 50px;
+    }
+    ul{
+        margin-bottom: 0px;
+    }
+    .content-feelings ul{
+        padding-top: 30px;
+    }
+
+}

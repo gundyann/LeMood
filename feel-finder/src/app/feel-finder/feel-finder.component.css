@@ -33,28 +33,6 @@ h3{
     box-sizing: border-box;
 }
 
-ul{
-    margin: 15px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-li{
-
-}
-.content-feelings li{
-    display: flex;
-    flex: 0 50%;
-    margin-bottom: 5px; 
-    text-align: left;
-}
-.content-thoughts li{
-    display: list-item;
-    margin-bottom: 15px; 
-    width: 100%;
-    min-width: 100%;
-}
-
 /* Buttons */
 .button-white, .button-blue{
     text-decoration: none;
