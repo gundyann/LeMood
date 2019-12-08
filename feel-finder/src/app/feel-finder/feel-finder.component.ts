@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { State } from '../state';
 
 @Component({
   selector: 'custom-feel-finder',
@@ -6,11 +7,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./feel-finder.component.css'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
+
+
 export class FeelFinderComponent implements OnInit {
 
-  constructor() { }
+  state :string;
+
+  constructor() {}
 
   ngOnInit() {
+    this.state = 'feelfinder';
+  }
+
+  onNavigateDestination(newState:string){
+    this.state = newState;            
   }
 
 }

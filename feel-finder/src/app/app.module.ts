@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { FeelingCardComponent } from './feeling-card/feeling-card.component';
+import { DiaryComponent } from './diary/diary.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FeelingCardComponent } from './feeling-card/feeling-card.component';
     FooterComponent,
     ContentComponent,
     FeelingCardComponent,
+    DiaryComponent,
   ],
   imports: [
     BrowserModule

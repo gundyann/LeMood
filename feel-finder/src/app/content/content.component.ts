@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CardData } from '../card-data';
 import cardData from './gefuehlsfinder.json';
+import { State } from '../state';
 
 
 
@@ -11,8 +12,18 @@ import cardData from './gefuehlsfinder.json';
 })
 export class ContentComponent implements OnInit {
 
-  cards: any[];
-  test: any[];
+  
+diaryActiveFlag :boolean;
+feelfinderActiveFlag :boolean;
+
+cards: any[];
+test: any[];
+
+@Input() public state: string;
+
+ngOnChanges(changes) {
+ this.calculateCSSClasses()
+}
 
   constructor() {
     this.cards = [];
@@ -48,5 +59,37 @@ export class ContentComponent implements OnInit {
       }
       return a;
   }
+
+ 
+
+  calculateCSSClasses(){
+    console.log("we calculated Classes");
+    
+    if(this.state == 'feelfinder'){
+      console.log("In feelfinder");
+      
+      this.feelfinderActiveFlag = true;
+      this.diaryActiveFlag = false;
+    } 
+    if(this.state == 'diary'){
+      console.log("in diary");
+      
+      this.feelfinderActiveFlag = false;
+      this.diaryActiveFlag = true;
+    }
+  }
+
+  calculateClassesForDiary() {
+    return {
+     // 'hidden' : !this.feelfinderActiveFlag
+    };
+  }
+
+  calculateClassesForFeelFinder(){
+    return {
+     // 'hidden' : !this.diaryActiveFlag
+    };
+  }
+
 
 }

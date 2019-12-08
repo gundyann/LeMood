@@ -1,4 +1,3 @@
-import {StyleAttribut} from './style-attribut';
 
 export class CardData {
 

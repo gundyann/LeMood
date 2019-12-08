@@ -1,11 +1,18 @@
-<div class="left-arrow-wrapper">
-        <a href="#"></a>
-</div>
+        <div class="left-arrow-wrapper" >
+                <a href="#"></a>
+        </div>
+        
+        <div class="card-wrapper"  [ngClass]="calculateClassesForFeelFinder()">
+                <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle"></custom-feeling-card>    
+        </div>
+        <div class="right-arrow-wrapper" [ngClass]="calculateClassesForFeelFinder()">
+                <a href="#"></a>
+        </div>
+<!-------
+        
+          <div [ngClass]="calculateClassesForFeelFinder()"></div>
 
-<div class="card-wrapper">
-        <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle"></custom-feeling-card>
-    
-</div>
-<div class="right-arrow-wrapper">
-        <a href="#"></a>
-</div>
+
+<div [ngClass]="calculateClassesForDiary()"><custom-diary></custom-diary></div>
+----->
+      

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'custom-header',
@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  
+@Input() public state: string;
+title: string;
+
+ngOnChanges(changes) {
+ this.changeTitle()
+}
+
+
   constructor() { }
 
   ngOnInit() {
   }
+
+changeTitle(){
+  if(this.state == 'feelfinder'){
+    this.title = "Gefühlsfinder";
+  }
+  if(this.state == 'diary'){
+    this.title = "Tagebuch";
+  }
+
+}
 
 }
