@@ -12,18 +12,8 @@ import { State } from '../state';
 })
 export class ContentComponent implements OnInit {
 
-  
-diaryActiveFlag :boolean;
-feelfinderActiveFlag :boolean;
-
 cards: any[];
 test: any[];
-
-@Input() public state: string;
-
-ngOnChanges(changes) {
- this.calculateCSSClasses()
-}
 
   constructor() {
     this.cards = [];
@@ -59,37 +49,5 @@ ngOnChanges(changes) {
       }
       return a;
   }
-
- 
-
-  calculateCSSClasses(){
-    console.log("we calculated Classes");
-    
-    if(this.state == 'feelfinder'){
-      console.log("In feelfinder");
-      
-      this.feelfinderActiveFlag = true;
-      this.diaryActiveFlag = false;
-    } 
-    if(this.state == 'diary'){
-      console.log("in diary");
-      
-      this.feelfinderActiveFlag = false;
-      this.diaryActiveFlag = true;
-    }
-  }
-
-  calculateClassesForDiary() {
-    return {
-     // 'hidden' : !this.feelfinderActiveFlag
-    };
-  }
-
-  calculateClassesForFeelFinder(){
-    return {
-     // 'feelfinder' : !this.diaryActiveFlag
-    };
-  }
-
 
 }
