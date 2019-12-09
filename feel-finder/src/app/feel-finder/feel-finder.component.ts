@@ -11,21 +11,26 @@ import { State } from '../state';
 
 export class FeelFinderComponent implements OnInit {
 
-  state :string;
+  state: string;
+  stateFlag: boolean;
 
   constructor() {}
 
   ngOnInit() {
     this.state = 'feelfinder';
+    this.stateFlag = true;
   }
 
   switchState(newState:string){
-    this.state = newState;            
+    this.state = newState;
+    this.stateFlag = !this.stateFlag;
   }
 
   calculateClassesForContentWrapper(){
     return {
       'content-content-wrapper': true,
+      'state-feel-finder': this.stateFlag,
+      'state-diary': !this.stateFlag,
     }
   }
 }

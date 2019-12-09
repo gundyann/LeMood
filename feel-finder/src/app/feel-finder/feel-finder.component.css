@@ -84,11 +84,16 @@ h3{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     background-color: rgba(243, 243, 243, 1);
     order: 2;
     flex-grow: 1;
+}
+.content-content-wrapper.state-feel-finder .diary-content{
+    display: none;
+}
+
+.content-content-wrapper.state-diary .feel-finder-content{
+    display: none;
 }
 
 .footer-content-wrapper{
