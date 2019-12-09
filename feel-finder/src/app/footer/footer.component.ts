@@ -8,7 +8,7 @@ import { State } from '../state';
 })
 export class FooterComponent implements OnInit {
 
-  @Output() navigateDestination = new EventEmitter<string>();
+  @Output() switchState = new EventEmitter<string>();
 
   rightButtonText: string;
   leftButtonText: string;
@@ -26,7 +26,7 @@ export class FooterComponent implements OnInit {
     
   }
 
-  navigateToDiary(){   
+  onClickSwitchState(){   
     if(this.state.currentState == 'feelfinder'){
       this.rightButtonText = "Zum Gefühlsfinder";
       this.state.setState('diary');
@@ -34,6 +34,6 @@ export class FooterComponent implements OnInit {
       this.rightButtonText = "Zum Tagebuch";
       this.state.setState('feelfinder');
     } 
-    this.navigateDestination.emit(this.state.currentState);
+    this.switchState.emit(this.state.currentState);
   }
 }

@@ -19,8 +19,13 @@ export class FeelFinderComponent implements OnInit {
     this.state = 'feelfinder';
   }
 
-  onNavigateDestination(newState:string){
+  switchState(newState:string){
     this.state = newState;            
   }
 
+  calculateClassesForContentWrapper(){
+    return {
+      'content-content-wrapper': true,
+    }
+  }
 }

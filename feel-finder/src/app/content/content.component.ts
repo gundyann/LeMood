@@ -87,7 +87,7 @@ ngOnChanges(changes) {
 
   calculateClassesForFeelFinder(){
     return {
-     // 'hidden' : !this.diaryActiveFlag
+     // 'feelfinder' : !this.diaryActiveFlag
     };
   }
 
