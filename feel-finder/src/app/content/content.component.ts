@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { CardData } from '../card-data';
 import cardData from './gefuehlsfinder.json';
 import { State } from '../state';
@@ -15,9 +15,13 @@ export class ContentComponent implements OnInit {
 cards: any[];
 test: any[];
 
+@Input() state:string;
+
   constructor() {
     this.cards = [];
    }
+
+  
 
   ngOnInit() {
     cardData.list.forEach(element => {
@@ -37,6 +41,12 @@ test: any[];
       this.cards.push(card);
     });
     this.shuffle(this.cards);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(this.state == "feelfinder"){
+      this.shuffle(this.cards);
+    }
   }
 
     shuffle(a: CardData[]) {
