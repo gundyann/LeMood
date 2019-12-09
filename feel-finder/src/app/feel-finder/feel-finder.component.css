@@ -33,28 +33,6 @@ h3{
     box-sizing: border-box;
 }
 
-ul{
-    margin: 15px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-li{
-
-}
-.content-feelings li{
-    display: flex;
-    flex: 0 50%;
-    margin-bottom: 5px; 
-    text-align: left;
-}
-.content-thoughts li{
-    display: list-item;
-    margin-bottom: 15px; 
-    width: 100%;
-    min-width: 100%;
-}
-
 /* Buttons */
 .button-white, .button-blue{
     text-decoration: none;
@@ -96,6 +74,7 @@ li{
     align-items: center;
     min-height: 75px;
     order: 1;
+    justify-content: space-between;
     -webkit-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
     -moz-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
     box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
