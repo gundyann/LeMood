@@ -29,9 +29,11 @@ export class FooterComponent implements OnInit {
   onClickSwitchState(){   
     if(this.state.currentState == 'feelfinder'){
       this.rightButtonText = "Zum Gefühlsfinder";
+      this.leftButtonText = "Eintrag speichern";
       this.state.setState('diary');
     } else if(this.state.currentState == 'diary'){
       this.rightButtonText = "Zum Tagebuch";
+      this.leftButtonText = "+Tagebuch";
       this.state.setState('feelfinder');
     } 
     this.switchState.emit(this.state.currentState);
