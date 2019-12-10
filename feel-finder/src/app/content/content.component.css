@@ -53,6 +53,13 @@
     display: none;
 }
 
+
+
+.diary-content-wrapper{
+    flex-grow: 1;
+    width: 85%;
+}
+
 @media only screen and (max-width:450px) {
     .card{
         height: auto;
