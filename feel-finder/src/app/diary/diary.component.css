@@ -1,11 +1,35 @@
-.diary-input-area{
+
+
+.diary-input-textarea{
     width: 100%;
     min-height: 40%;
     outline-color: #4192d9;
     resize: none;
 }
 
-.diary-input-area-wrapper{
+.diary-input-wrapper{
     height: 100%;
     padding-top: 20px;
+}
+
+
+.diary-input-wrapper ul{
+    padding: 0;
+    list-style: none;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.diary-input-wrapper ul li .list-item{
+    font-size: 13px;
+    color: #595654;
+}
+
+
+.diary-input-wrapper ul li{
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
 }

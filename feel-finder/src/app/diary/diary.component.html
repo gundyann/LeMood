@@ -1,5 +1,8 @@
-<div class="diary-input-area-wrapper">
-    <textarea placeholder="Tagebucheintrag verfassen" class='diary-input-area' ></textarea>
-
-
+<div class="diary-input-wrapper">
+    <textarea placeholder="Tagebucheintrag verfassen" class='diary-input-textarea' ></textarea>
+    <ul>
+      <li *ngFor="let tag of tags">
+                <div class="list-item">{{tag}}</div>
+      </li>
+    </ul>
 </div>
