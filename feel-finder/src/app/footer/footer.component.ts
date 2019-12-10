@@ -9,6 +9,7 @@ import { State } from '../state';
 export class FooterComponent implements OnInit {
 
   @Output() switchState = new EventEmitter<string>();
+  @Output() feeling = new EventEmitter<string>();
 
   rightButtonText: string;
   leftButtonText: string;
@@ -37,5 +38,15 @@ export class FooterComponent implements OnInit {
       this.state.setState('feelfinder');
     } 
     this.switchState.emit(this.state.currentState);
+  }
+
+  onClickLeftButton(){
+    if(this.state.currentState == 'feelfinder'){
+      console.log('We clicked on LeftButton in feelfinder');   
+      this.feeling.emit('Hoffnungslosigkeit');   
+    } else if(this.state.currentState == 'diary'){
+      console.log('We clicked on LeftButton in diary');
+      
+    }
   }
 }

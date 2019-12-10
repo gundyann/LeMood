@@ -1,13 +1,14 @@
 
 
 .diary-input-textarea{
-    width: 100%;
+    width: 98%;
     min-height: 40%;
     outline-color: #4192d9;
     resize: none;
 }
 
 .diary-input-wrapper{
+    flex-grow: 1;
     height: 100%;
     padding-top: 20px;
 }
@@ -16,10 +17,15 @@
 .diary-input-wrapper ul{
     padding: 0;
     list-style: none;
-    margin: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.diary-input-wrapper span{
+    font-size: 13px;
+    color: #595654;
+
 }
 
 .diary-input-wrapper ul li .list-item{
@@ -33,3 +39,4 @@
     margin-right: 5px;
     margin-left: 5px;
 }
+

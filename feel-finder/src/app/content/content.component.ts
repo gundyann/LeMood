@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { CardData } from '../card-data';
 import cardData from './gefuehlsfinder.json';
 import { State } from '../state';
+import { DiaryComponent } from '../diary/diary.component';
 
 
 
@@ -12,6 +13,9 @@ import { State } from '../state';
 })
 export class ContentComponent implements OnInit {
 
+  @ViewChild('diary', {static : false}) diary:DiaryComponent
+
+
 cards: any[];
 test: any[];
 
@@ -19,9 +23,7 @@ test: any[];
 
   constructor() {
     this.cards = [];
-   }
-
-  
+   }  
 
   ngOnInit() {
     cardData.list.forEach(element => {
@@ -58,6 +60,10 @@ test: any[];
           a[j] = x;
       }
       return a;
+  }
+
+  addTagToDiary(newFeelingTag :string){
+    this.diary.pushToFeelings(newFeelingTag);
   }
 
 }

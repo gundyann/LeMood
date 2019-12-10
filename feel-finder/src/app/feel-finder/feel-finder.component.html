@@ -1,7 +1,7 @@
 <div class="feel-finder-content-wrapper">
     <custom-header class="header-content-wrapper" [state]="state"></custom-header>
-    <custom-content [ngClass]="calculateClassesForContentWrapper()" [state]="state"></custom-content>
-    <custom-footer class="footer-content-wrapper" (switchState)="switchState($event)"></custom-footer>
+    <custom-content [ngClass]="calculateClassesForContentWrapper()" [state]="state" #content></custom-content>
+    <custom-footer class="footer-content-wrapper" (switchState)="switchState($event)" (feeling)="addFeelingToDiary($event)"></custom-footer>
 </div>
 
 

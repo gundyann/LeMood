@@ -9,19 +9,18 @@ export class DiaryComponent implements OnInit {
 
   
   tags: string[];
+  noTagsText: string;
 
   constructor() { }
 
   ngOnInit() {
     this.tags = [];
-    this.pushToFeelings("Hoffnungslosigkeit");
-    this.pushToFeelings("Hoffnungslosigkeit");
-    this.pushToFeelings("Hoffnungslosigkeit");
-    this.pushToFeelings("Hoffnungslosigkeit");
+    this.noTagsText = "Der Eintrag hat noch keine Tags";    
   }
 
 
   pushToFeelings(feeling: string){
-    this.tags.push('#'+feeling);
+    this.noTagsText = "";
+    this.tags.push('#'+feeling);    
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { State } from '../state';
+import { ContentComponent } from '../content/content.component';
 
 @Component({
   selector: 'custom-feel-finder',
@@ -10,6 +11,8 @@ import { State } from '../state';
 
 
 export class FeelFinderComponent implements OnInit {
+
+  @ViewChild('content', {static : false}) diary:ContentComponent
 
   state: string;
   stateFlag: boolean;
@@ -24,6 +27,10 @@ export class FeelFinderComponent implements OnInit {
   switchState(newState:string){
     this.state = newState;
     this.stateFlag = !this.stateFlag;
+  }
+
+  addFeelingToDiary(newFeelingTag:string){
+    this.diary.addTagToDiary(newFeelingTag);
   }
 
   calculateClassesForContentWrapper(){
