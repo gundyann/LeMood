@@ -1,8 +1,11 @@
 .diary-input-area{
     width: 100%;
     min-height: 40%;
+    outline-color: #4192d9;
+    resize: none;
 }
 
 .diary-input-area-wrapper{
     height: 100%;
+    padding-top: 20px;
 }
