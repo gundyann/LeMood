@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .diary-content{
@@ -41,6 +42,12 @@
 }
 .right-arrow-wrapper a{
     margin-left: 15px;
+}
+
+
+.info-text-top {    
+    position: absolute;
+    top: 10px;
 }
 
 .card-wrapper{

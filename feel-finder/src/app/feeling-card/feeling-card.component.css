@@ -76,12 +76,19 @@ ul{
 
 .button-add-feeling-to-diary{
     position: absolute;
-    bottom: 0px;
+    bottom: -5px;
     left: 0;
     right: 0;
     max-width: 60px;
     margin: 0px auto;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(140,140,140,1);
 }
+
+.button-add-feeling-to-diary:active{
+    transform: translateY(4px);
+}
+
 
 .animation-move-down .feeling-title::after {
     content: "\2934"; /* unicode for an arrow */

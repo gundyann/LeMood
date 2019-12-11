@@ -19,6 +19,8 @@ export class ContentComponent implements OnInit {
 cards: any[];
 test: any[];
 
+infoText: string;
+
 @Input() state:string;
 
   constructor() {
@@ -64,6 +66,10 @@ test: any[];
 
   addTagToDiary(newFeelingTag :string){   
     this.diary.pushToFeelings(newFeelingTag);
-  }
+    this.infoText = "Gefühl wurde dem Tagebucheintrag hinzugefügt";
+    setTimeout(() => {
+     this.infoText = "";
+    }, 2000);
 
+  }
 }

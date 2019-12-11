@@ -18,7 +18,7 @@ import { DiaryComponent } from './diary/diary.component';
     DiaryComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   entryComponents: [FeelFinderComponent],
