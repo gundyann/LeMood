@@ -54,7 +54,9 @@ h3{
     background-color: #ffffff;
     color: #4192D9;
 }
-
+.medium-sized-button{
+    min-width: 105px;
+}
 /* Content */
 .feel-finder-content-wrapper{
     display: flex;
