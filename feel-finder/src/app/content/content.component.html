@@ -1,17 +1,15 @@
 
 <div class="feel-finder-content">
         <div class="left-arrow-wrapper">
-                <a href="#">&#x2190;</a> 
-          <!---   <img src="{{imageSrcLeftArrow}}"> -->
+                <a href="#"><svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 72.62"><defs><style>.cls-1{fill:#333;}</style></defs><title>left_arrow</title><path class="cls-1" d="M2.1,41.3,31.4,70.6a7,7,0,1,0,9.9-9.9L24,43.3H78a7,7,0,1,0,0-14H24L41.3,12a7,7,0,1,0-10-9.9L2.1,31.3a7.12,7.12,0,0,0-2.1,5A6.72,6.72,0,0,0,2.1,41.3Z"/></svg></a> 
+         
         </div>        
                 <div class="card-wrapper">
                         <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle" (feelingToAddToDiary)="addTagToDiary($event)"></custom-feeling-card> 
                 </div>
-         <div class="right-arrow-wrapper">
-    <a href="#">&#x2192;</a>      
-<!---<img src="{{imageSrcRightArrow}}"> -->
-
-   </div>
+        <div class="right-arrow-wrapper">
+                 <a href="#"><svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 72.62"><defs><style>.cls-1{fill:#333;}</style></defs><title>right_arrow</title><path class="cls-1" d="M82.9,31.33,53.6,2a7.08,7.08,0,0,0-9.9,0,7.06,7.06,0,0,0,0,9.9L61,29.33H7a7,7,0,0,0,0,14H61L43.7,60.62a7,7,0,1,0,10,9.9L82.9,41.33a7.12,7.12,0,0,0,2.1-5A6.69,6.69,0,0,0,82.9,31.33Z" transform="translate(0 0)"/></svg></a>      
+        </div>
 </div>
 <div class="diary-content">
         <custom-diary #diary class="diary-content-wrapper"></custom-diary>
