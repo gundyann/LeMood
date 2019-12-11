@@ -62,7 +62,7 @@ test: any[];
       return a;
   }
 
-  addTagToDiary(newFeelingTag :string){
+  addTagToDiary(newFeelingTag :string){   
     this.diary.pushToFeelings(newFeelingTag);
   }
 

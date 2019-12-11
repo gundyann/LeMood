@@ -4,7 +4,7 @@
                 <a href="#">&#x2190;</a>
         </div>        
                 <div class="card-wrapper">
-                        <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle"></custom-feeling-card> 
+                        <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle" (feelingToAddToDiary)="addTagToDiary($event)"></custom-feeling-card> 
                 </div>
          <div class="right-arrow-wrapper">
                 <a href="#">&#x2192;</a>

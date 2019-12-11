@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'custom-feeling-card',
@@ -26,6 +26,9 @@ export class FeelingCardComponent implements OnInit {
   @Input()
   feelTitle: string;  // Der Titel der Karte, das Grundgefühl
 
+  @Output() feelingToAddToDiary = new EventEmitter<string>();
+
+
   constructor() {
   }
 
@@ -34,6 +37,10 @@ export class FeelingCardComponent implements OnInit {
 
   switchState() {
     this.stateFlag = !this.stateFlag;
+  }
+
+  onClickAddFeelingToDiary(){
+    this.feelingToAddToDiary.emit(this.feelTitle);
   }
 
   calculateClassesForMovingTitle() {

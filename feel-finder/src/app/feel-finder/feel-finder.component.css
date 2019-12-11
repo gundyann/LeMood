@@ -34,7 +34,7 @@ h3{
 }
 
 /* Buttons */
-.button-white, .button-blue{
+.button-white, .button-blue, .button-neutral{
     text-decoration: none;
     display: grid;
     align-items: center;
@@ -54,6 +54,10 @@ h3{
     background-color: #ffffff;
     color: #4192D9;
 }
+.button-neutral{
+    color: #ffffff;
+}
+
 .medium-sized-button{
     min-width: 105px;
 }
