@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiaryComponent implements OnInit {
 
-  
   tags: string[];
   noTagsText: string;
 
@@ -30,5 +29,12 @@ export class DiaryComponent implements OnInit {
   clearTags(){
     this.tags = [];
     this.noTagsText = "Der Eintrag hat noch keine Tags";
+  }
+
+  saveEntry(diaryEntryText:string){
+    console.log(diaryEntryText);
+    console.log(this.tags);
+    
+    
   }
 }

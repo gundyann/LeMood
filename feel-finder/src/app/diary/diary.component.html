@@ -1,5 +1,5 @@
 <div class="diary-input-wrapper">
-    <textarea placeholder="Tagebucheintrag verfassen..." class='diary-input-textarea' ></textarea>
+    <textarea placeholder="Tagebucheintrag verfassen..." class='diary-input-textarea' #diaryEntryText></textarea>
     <span>{{noTagsText}}</span>
     <ul>
       <li *ngFor="let tag of tags">
@@ -7,7 +7,5 @@
       </li>
     </ul>
     <a class="button-red" (click)="clearTags()">Tags löschen</a>
-    <a class="button-blue" >Eintrag speichern</a>
-
-
+    <a class="button-blue" (click)="saveEntry(diaryEntryText.value)">Eintrag speichern</a>
 </div>
