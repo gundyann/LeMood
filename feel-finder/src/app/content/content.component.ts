@@ -20,11 +20,14 @@ cards: any[];
 test: any[];
 
 infoText: string;
+visibleInfoTextFlag: boolean;
+
 
 @Input() state:string;
 
   constructor() {
     this.cards = [];
+    this.visibleInfoTextFlag = false;
    }  
 
   ngOnInit() {
@@ -53,7 +56,7 @@ infoText: string;
     }
   }
 
-    shuffle(a: CardData[]) {
+  shuffle(a: CardData[]) {
       var j :number, x :CardData, i :number;
       for (i = a.length - 1; i > 0; i--) {
           j = Math.floor(Math.random() * (i + 1));
@@ -65,11 +68,23 @@ infoText: string;
   }
 
   addTagToDiary(newFeelingTag :string){   
+    this.visibleInfoTextFlag = true;
     this.diary.pushToFeelings(newFeelingTag);
     this.infoText = "Gefühl wurde dem Tagebucheintrag hinzugefügt";
     setTimeout(() => {
-     this.infoText = "";
-    }, 2000);
+      this.visibleInfoTextFlag = false;
+      setTimeout(() => {
+        this.infoText = "";
+       }, 300);
+    }, 800);   
+  }
 
+
+  calculateClassesForInfoText(){
+    return {
+      'info-text-top' : true,
+      'animation-fade-in': this.visibleInfoTextFlag,
+      'animation-fade-out': !this.visibleInfoTextFlag,
+    };
   }
 }

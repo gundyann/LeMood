@@ -67,6 +67,38 @@
     flex-grow: 1;
 }
 
+.animation-fade-in{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-fade-out{
+    opacity: 1;
+    animation-name: fadeOut;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 @media only screen and (max-width:450px) {
     .card{
         height: auto;
