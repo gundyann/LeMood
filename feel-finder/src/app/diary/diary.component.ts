@@ -21,6 +21,14 @@ export class DiaryComponent implements OnInit {
 
   pushToFeelings(feeling: string){
     this.noTagsText = "";
-    this.tags.push('#'+feeling);    
+    var feelingWithHashtag = '#'+feeling;
+    if(!this.tags.includes(feelingWithHashtag)){
+      this.tags.push(feelingWithHashtag);
+    }
+  }
+
+  clearTags(){
+    this.tags = [];
+    this.noTagsText = "Der Eintrag hat noch keine Tags";
   }
 }

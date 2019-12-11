@@ -11,16 +11,14 @@ export class FooterComponent implements OnInit {
   @Output() switchState = new EventEmitter<string>();
   @Output() feeling = new EventEmitter<string>();
 
-  rightButtonText: string;
-  leftButtonText: string;
+  buttonText: string;
 
   state :State;
   
 
   constructor() { 
     this.state = new State("feelfinder");
-    this.rightButtonText = "Zum Tagebuch";
-    this.leftButtonText = "+Tagebuch";
+    this.buttonText = "Zum Tagebuch";
   }
 
   ngOnInit() {
@@ -29,12 +27,10 @@ export class FooterComponent implements OnInit {
 
   onClickSwitchState(){   
     if(this.state.currentState == 'feelfinder'){
-      this.rightButtonText = "Zum Gefühlsfinder";
-      this.leftButtonText = "Eintrag speichern";
+      this.buttonText = "Zum Gefühlsfinder";
       this.state.setState('diary');
     } else if(this.state.currentState == 'diary'){
-      this.rightButtonText = "Zum Tagebuch";
-      this.leftButtonText = "+Tagebuch";
+      this.buttonText = "Zum Tagebuch";
       this.state.setState('feelfinder');
     } 
     this.switchState.emit(this.state.currentState);

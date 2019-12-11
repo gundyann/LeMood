@@ -1,14 +1,17 @@
 
 <div class="feel-finder-content">
         <div class="left-arrow-wrapper">
-                <a href="#">&#x2190;</a>
+                <a href="#">&#x2190;</a> 
+          <!---   <img src="{{imageSrcLeftArrow}}"> -->
         </div>        
                 <div class="card-wrapper">
                         <custom-feeling-card class="card" *ngFor="let cardData of cards" [feelTitle]="cardData.title" [feelings]="cardData.feelings" [thoughts]="cardData.thoughts" [backgroundStyle]="cardData.backgroundStyle" [dotStyle]="cardData.dotStyle" (feelingToAddToDiary)="addTagToDiary($event)"></custom-feeling-card> 
                 </div>
          <div class="right-arrow-wrapper">
-                <a href="#">&#x2192;</a>
-        </div>
+    <a href="#">&#x2192;</a>      
+<!---<img src="{{imageSrcRightArrow}}"> -->
+
+   </div>
 </div>
 <div class="diary-content">
         <custom-diary #diary class="diary-content-wrapper"></custom-diary>

@@ -34,7 +34,7 @@ h3{
 }
 
 /* Buttons */
-.button-white, .button-blue, .button-neutral{
+.button-red, .button-blue, .button-neutral{
     text-decoration: none;
     display: grid;
     align-items: center;
@@ -45,18 +45,18 @@ h3{
     padding-right: 15px;
     padding-top: 7px;
     padding-bottom: 7px;
+    color: #ffffff;
+}
+.button-red:hover, .button-blue:hover, .button-neutral:hover{
+    opacity: 0.8;
 }
 .button-blue{
     background-color: #4192D9;
-    color: #ffffff;
 }
-.button-white{
-    background-color: #ffffff;
-    color: #4192D9;
+.button-red{
+    background-color: #e73e34;
 }
-.button-neutral{
-    color: #ffffff;
-}
+
 
 .medium-sized-button{
     min-width: 105px;
