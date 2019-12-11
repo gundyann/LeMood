@@ -102,13 +102,17 @@
 @media only screen and (max-width:450px) {
     .card{
         height: auto;
-        padding-bottom: 0px;
     }
     .card-wrapper{
         max-height: 375px;
+        margin-top: 30px;
     }
     .left-arrow-wrapper,
     .right-arrow-wrapper{
         display: none;
     }
+    .info-text-top {    
+        top: 4px;
+    }
+    
 }

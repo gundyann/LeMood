@@ -70,7 +70,7 @@ visibleInfoTextFlag: boolean;
   addTagToDiary(newFeelingTag :string){   
     this.visibleInfoTextFlag = true;
     this.diary.pushToFeelings(newFeelingTag);
-    this.infoText = "Gefühl wurde dem Tagebucheintrag hinzugefügt";
+    this.infoText = "#" + newFeelingTag + " hinzugefügt";
     setTimeout(() => {
       this.visibleInfoTextFlag = false;
       setTimeout(() => {

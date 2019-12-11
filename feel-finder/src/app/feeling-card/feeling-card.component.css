@@ -189,7 +189,7 @@ ul{
 @media only screen and (max-width:450px) {
     @keyframes moveUp{
         from{
-            transform: translateY(297px);
+            transform: translateY(255px);
         }
         to{
          transform: translateY(-15px);
@@ -202,7 +202,7 @@ ul{
             transform: translateY(-15px);
         }
         to{
-         transform: translateY(297px);
+         transform: translateY(255px);
          animation-timing-function: ease;
      }
     }
@@ -213,8 +213,16 @@ ul{
     ul{
         margin-bottom: 0px;
     }
+   
     .content-feelings ul{
         padding-top: 30px;
+        max-height: 250px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .content-feelings ul::-webkit-scrollbar {
+        display: none;
     }
 
 }
