@@ -8,3 +8,16 @@
 .header-spacing-box:last-child{
     justify-content: flex-end;
 }
+
+
+.header-spacing-box h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+@media only screen and (max-width:450px) {
+
+    .header-spacing-box h3{
+        font-size: 14px;
+    }
+}
