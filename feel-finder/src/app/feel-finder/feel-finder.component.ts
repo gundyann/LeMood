@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
-import { State } from '../state';
+import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
 import { ContentComponent } from '../content/content.component';
+import { JSOnFhir } from '@i4mi/js-on-fhir';
+import { MidataService } from '../midata.service';
 
 @Component({
   selector: 'custom-feel-finder',
@@ -10,19 +11,52 @@ import { ContentComponent } from '../content/content.component';
 })
 
 
-export class FeelFinderComponent implements OnInit {
+export class FeelFinderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('content', {static : false}) diary:ContentComponent
 
   state: string;
   stateFlag: boolean;
 
-  constructor() {}
+  fhir: JSOnFhir;
+
+  constructor(private midataService :MidataService) { 
+    this.fhir = this.midataService.getMidataService();
+  }
 
   ngOnInit() {
     this.state = 'feelfinder';
     this.stateFlag = true;
+
+    setTimeout(() => {
+      if(!this.fhir.isLoggedIn()){
+        this.fhir.authenticate();
+      }
+    }, 1000);
   }
+
+  
+  ngAfterViewInit(){
+       
+    this.fhir.handleAuthResponse()
+    .then(res => {
+    // check if the response is not null
+    if(res){
+      // we are authenticated
+      // ... and can keep refreshToken
+     console.log('we are authenticated');
+     
+    } else {
+      console.log('we are not authenticated');
+          
+        }
+      })
+  .catch(err => {
+    // oops, something went wrong
+    console.log(err);
+  });
+  }
+  
 
   switchState(newState:string){
     this.state = newState;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MidataService } from '../midata.service';
+import { JSOnFhir } from '@i4mi/js-on-fhir';
 
 @Component({
   selector: 'custom-diary',
@@ -10,13 +12,16 @@ export class DiaryComponent implements OnInit {
   tags: string[];
   noTagsText: string;
 
-  constructor() { }
+  fhir: JSOnFhir;
+
+  constructor(private midataService :MidataService) { 
+    this.fhir = this.midataService.getMidataService();
+  }
 
   ngOnInit() {
     this.tags = [];
     this.noTagsText = "Der Eintrag hat noch keine Tags";    
   }
-
 
   pushToFeelings(feeling: string){
     this.noTagsText = "";
@@ -34,7 +39,7 @@ export class DiaryComponent implements OnInit {
   saveEntry(diaryEntryText:string){
     console.log(diaryEntryText);
     console.log(this.tags);
-    
+    console.log(this.fhir.isLoggedIn());
     
   }
 }

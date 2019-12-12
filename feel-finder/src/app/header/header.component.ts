@@ -8,9 +8,8 @@ import { JSOnFhir } from '@i4mi/js-on-fhir';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, AfterViewInit{
+export class HeaderComponent implements OnInit{
 
-fhir: JSOnFhir;
   
 @Input() public state: string;
 title: string;
@@ -21,46 +20,10 @@ ngOnChanges(changes) {
 }
 
 
-  constructor(private midataService :MidataService) { 
-    this.fhir = this.midataService.getMidataService();
+  constructor() { 
   }
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit(){
-       
-    this.fhir.handleAuthResponse()
-    .then(res => {
-    // check if the response is not null
-    if(res){
-      // we are authenticated
-      // ... and can keep refreshToken
-     console.log('we are authenticated');
-     
-    } else {
-      console.log('we are not authenticated');
-          
-        }
-      })
-  .catch(err => {
-    // oops, something went wrong
-    console.log(err);
-  });
-  }
-  
-
-  loginToMidata(){
-    this.fhir.authenticate();   
-  }
-
-  logout(){
-    console.log(this.fhir.isLoggedIn());
-    
-    this.fhir.logout();
-
-    console.log(this.fhir.isLoggedIn());
-    
   }
 
 changeTitle(){
