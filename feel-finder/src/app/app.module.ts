@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { JSOnFhir } from '@i4mi/js-on-fhir';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { FeelFinderComponent } from './feel-finder/feel-finder.component';
