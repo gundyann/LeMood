@@ -66,12 +66,23 @@ ul{
     margin-top: 0px;
     margin-bottom: 0px;
 }
-.feeling-title::after {
-    font-weight: 800;
-    width: auto;
+
+.base-feeling-wrapper .arrow-up svg,
+.base-feeling-wrapper .arrow-down svg {
     position: absolute;
-    right: -10px;
-    font-size: 15px;
+    top: 33px;
+    right: -5px;
+    bottom: 0;
+    height: 15px;
+    width: 15px;
+}
+.base-feeling-wrapper.animation-move-down .arrow-up svg,
+.base-feeling-wrapper.animation-move-up .arrow-down svg {
+    display: block;
+}
+.base-feeling-wrapper.animation-move-down .arrow-down svg,
+.base-feeling-wrapper.animation-move-up .arrow-up svg {
+    display: none;
 }
 
 .button-add-feeling-to-diary{
@@ -87,16 +98,6 @@ ul{
 
 .button-add-feeling-to-diary:active{
     transform: translateY(4px);
-}
-
-
-.animation-move-down .feeling-title::after {
-    content: "\2934"; /* unicode for an arrow */
-    bottom: 5px;
-}
-.animation-move-up .feeling-title::after {
-    content: "\2935"; /* unicode for an arrow */
-    top: 5px;
 }
 
 .animation-wrapper{
@@ -223,6 +224,13 @@ ul{
 
     .content-feelings ul::-webkit-scrollbar {
         display: none;
+    }
+    .base-feeling-wrapper .arrow-up svg,
+    .base-feeling-wrapper .arrow-down svg {
+        top: 19px;
+    }
+    .feeling-title h1{
+        font-weight: 600;
     }
 
 }

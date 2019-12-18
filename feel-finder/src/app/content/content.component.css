@@ -31,19 +31,16 @@
     justify-content: center;
 }
 
-.left-arrow-wrapper a,
-.right-arrow-wrapper a{
-    color: #333333;
-    font-size: 30px;
-    text-decoration: none;
-}
-.left-arrow-wrapper a{
+.left-arrow-wrapper svg{
+    width: 25px;
+    height: 25px;
     margin-right: 15px;
 }
-.right-arrow-wrapper a{
+.right-arrow-wrapper svg{
+    width: 25px;
+    height: 25px;
     margin-left: 15px;
 }
-
 
 .info-text-top {    
     position: absolute;
