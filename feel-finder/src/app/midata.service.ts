@@ -9,12 +9,13 @@ export class MidataService {
   fhir: JSOnFhir;
 
   constructor() {
+
     if(this.fhir == null){
-      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', 'http://localhost/FeelFinder');
+      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', window.location.href.toString());
     }
    }
 
-  getMidataService() :JSOnFhir{
+  getMidataService() :JSOnFhir{ 
     return this.fhir;
   }
 }

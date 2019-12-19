@@ -22,6 +22,7 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
 
   constructor(private midataService :MidataService) { 
     this.fhir = this.midataService.getMidataService();
+    console.log(window.location.href);
   }
 
   ngOnInit() {
@@ -30,9 +31,9 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
 
     setTimeout(() => {
       if(!this.fhir.isLoggedIn()){
-        this.fhir.authenticate();
+       // this.fhir.authenticate();
       }
-    }, 1000);
+    }, 10000);
   }
 
   
