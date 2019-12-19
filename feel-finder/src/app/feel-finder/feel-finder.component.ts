@@ -45,6 +45,8 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
         // ... and can keep refreshToken
         this.refreshToken = result.refresh_token;
         this.header.checkLoginStatus();
+      } else {
+        this.fhir.authenticate();
       }
     })
     .catch(err => {
