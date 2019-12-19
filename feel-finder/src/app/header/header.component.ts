@@ -10,6 +10,8 @@ import { JSOnFhir } from '@i4mi/js-on-fhir';
 })
 export class HeaderComponent implements OnInit{
 
+  fhir: JSOnFhir;
+  loginbuttonText :string;
   
 @Input() public state: string;
 title: string;
@@ -20,7 +22,9 @@ ngOnChanges(changes) {
 }
 
 
-  constructor() { 
+  constructor(private midataService :MidataService) { 
+    this.fhir = this.midataService.getMidataService();   
+    this.loginbuttonText = "Login";
   }
 
   ngOnInit() {
@@ -33,7 +37,26 @@ changeTitle(){
   if(this.state == 'diary'){
     this.title = "Tagebuch";
   }
-
 }
+
+login(){
+  if(this.fhir.isLoggedIn()){
+    this.fhir.logout();
+    this.checkLoginStatus();
+  } else {
+    this.fhir.authenticate();
+  }
+}
+
+  checkLoginStatus(){
+    console.log('we in checkStatus');  
+    console.log(this.fhir.isLoggedIn());    
+
+    if(this.fhir.isLoggedIn()){
+      this.loginbuttonText = "Logout";
+    } else {
+      this.loginbuttonText = "Login";
+    }
+  }
 
 }

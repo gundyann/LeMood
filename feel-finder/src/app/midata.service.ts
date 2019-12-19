@@ -11,7 +11,7 @@ export class MidataService {
   constructor() {
 
     if(this.fhir == null){
-      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', window.location.href.toString());
+      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', 'http://localhost/FeelFinder/' ); //window.location.href.toString()
     }
    }
 

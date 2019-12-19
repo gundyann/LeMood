@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '
 import { ContentComponent } from '../content/content.component';
 import { JSOnFhir } from '@i4mi/js-on-fhir';
 import { MidataService } from '../midata.service';
+import { resultOfAuth } from '../resultOfAuth';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'custom-feel-finder',
@@ -14,50 +16,56 @@ import { MidataService } from '../midata.service';
 export class FeelFinderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('content', {static : false}) diary:ContentComponent
+  @ViewChild('header', {static : false}) header:HeaderComponent;
+
 
   state: string;
   stateFlag: boolean;
 
   fhir: JSOnFhir;
+  refreshToken: any;
 
   constructor(private midataService :MidataService) { 
     this.fhir = this.midataService.getMidataService();
-    console.log(window.location.href);
   }
 
   ngOnInit() {
     this.state = 'feelfinder';
     this.stateFlag = true;
-
-    setTimeout(() => {
-      if(!this.fhir.isLoggedIn()){
-       // this.fhir.authenticate();
-      }
-    }, 10000);
   }
-
   
-  ngAfterViewInit(){
-       
+  ngAfterViewInit(){         
     this.fhir.handleAuthResponse()
     .then(res => {
-    // check if the response is not null
-    if(res){
-      // we are authenticated
-      // ... and can keep refreshToken
-     console.log('we are authenticated');
+
+      // check if the response is not null
+      if(res){
+        var result = <resultOfAuth> res;
+        // we are authenticated
+        // ... and can keep refreshToken
+        this.refreshToken = result.refresh_token;
+        this.header.checkLoginStatus();
+      }
+    })
+    .catch(err => {
+      // oops, something went wrong
+      console.log(err);
+    });
      
-    } else {
-      console.log('we are not authenticated');
-          
-        }
-      })
+  }
+
+ refresh(){
+  this.fhir.refreshAuth(this.refreshToken)
+  .then(res => {      
+    if(res){
+      var result = <resultOfAuth> res;
+      this.refreshToken = result.refresh_token;
+    }
+  })
   .catch(err => {
-    // oops, something went wrong
     console.log(err);
   });
-  }
-  
+ }
 
   switchState(newState:string){
     this.state = newState;
