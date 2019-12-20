@@ -22,12 +22,24 @@ export class ResourceService {
   createDiaryRessource(comment :string, tags :string[]){
     if(comment != ""){
       var commentRes = this.createCommentRessource(comment);
-      this.createResource(commentRes);
     }
     if (tags && tags.length) {   
       var tagsRes = this.createTagsRessource(tags);
-      this.createResource(tagsRes);
     }     
+    Promise.all([this.fhir.create(commentRes), this.fhir.create(tagsRes)])
+    .then(res => {
+    
+      console.log("ID: " + this.getID(res[0]));
+      console.log("ID: "+ this.getID(res[1]));
+    })
+    .catch(err =>{
+      console.log(err);
+    })
+  }
+
+  private getID(result :any) :string{
+    var resource = <resource> result;
+    return resource.id;
   }
 
   private  createCommentRessource(comment :string) :any{
@@ -53,18 +65,4 @@ export class ResourceService {
     return date.toISOString();
   }
 
-
-  private createResource(resource :any){
-    this.fhir.create(resource)
-    .then(res => {
-      if(res){
-        console.log(res);
-        var result = <resource> res;
-        console.log('id: '+ result.id);        
-      }
-    })
-    .catch(err =>{
-      console.log(err);
-    })
-  }
 }
