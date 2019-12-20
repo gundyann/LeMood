@@ -42,18 +42,8 @@ export class DiaryComponent implements OnInit {
     console.log(this.tags);
     console.log(this.fhir.isLoggedIn());
 
-    let newCommentResource = this.resourceService.createCommentRessource(diaryEntryText);
-    this.fhir.create(newCommentResource)
-    .then(res => {
-      if(res){
-        console.log(res);
-        
-      }
-    })
-    .catch(err =>{
-      console.log(err);
-      
-    })
+    this.resourceService.createDiaryRessource(diaryEntryText, this.tags);
+
     
   }
 }

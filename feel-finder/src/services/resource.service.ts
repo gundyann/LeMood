@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
+import { MidataService } from './midata.service';
+import { JSOnFhir } from '@i4mi/js-on-fhir';
+import { resource } from '../interfaces/resource';
 import commentResource from './resources/commentResource.json';
+import tagsResource from './resources/tagsResource.json';
 
 @Injectable({
   providedIn: 'root'
@@ -8,34 +12,63 @@ export class ResourceService {
 
   private service :ResourceService;
 
-  constructor() { }
+  fhir: JSOnFhir;
 
-  getResourceService() :ResourceService{    
-    if(this.service == null){
-      this.service = new ResourceService();
+
+  constructor(private midataService :MidataService) { }
+
+  createDiaryRessource(comment :string, tags :string[]){
+    if(comment != ""){
+      var commentRes = this.createCommentRessource(comment);
+      var idOfCommentRes = this.createResource(commentRes);
     }
-    return this.service;
+    if (tags && tags.length) {   
+      var tagsRes = this.createTagsRessource(tags);
+      var idOfTagsRes = this.createResource(tagsRes);
+    } 
+    console.log(idOfCommentRes);
+    console.log(idOfTagsRes);    
+    
   }
 
-  createCommentRessource(comment :string) :any{
+  private  createCommentRessource(comment :string) :any{
     var newResource = commentResource;
     newResource.effectiveDateTime = this.getTime();
     newResource.valueString = comment;
     return newResource;
   }
 
-  createTagsRessource(tags :string[]) :string{
-
-    return "";
-  }
-
-  createDiaryRessource(){
-
+  private createTagsRessource(tags :string[]) :any{
+    var newResource = tagsResource;
+    newResource.effectiveDateTime = this.getTime();
+    var tagsAsString = "";
+    tags.forEach(tag => {
+      tagsAsString = tagsAsString + tag.replace('#', '') + " ";
+    });    
+    newResource.valueString = tagsAsString;
+    return newResource;
   }
 
   private getTime() :string{
     var date = new Date();
     return date.toISOString();
+  }
+
+
+  private createResource(resource :any) :string{
+    let idOfNewResource;
+    this.fhir.create(resource)
+    .then(res => {
+      if(res){
+        console.log(res);
+        var result = <resource> res;
+        idOfNewResource = result.id;
+      }
+    })
+    .catch(err =>{
+      console.log(err);
+    })
+    return idOfNewResource;
   }
 
 
