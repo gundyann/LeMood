@@ -9,9 +9,12 @@ export class MidataService {
   fhir: JSOnFhir;
 
   constructor() {
-
+    const callback = window.origin + '/FeelFinder';
+    console.log(callback);
+    
+    
     if(this.fhir == null){
-      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', window.location.href.toString() ); //window.location.href.toString()
+      this.fhir = new JSOnFhir('https://test.midata.coop', 'lemood', callback ); 
     }
    }
 
