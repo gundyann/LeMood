@@ -8,24 +8,24 @@ import { JSOnFhir } from '@i4mi/js-on-fhir';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
   fhir: JSOnFhir;
-  loginbuttonText :string;
+  loginbuttonText: string;
   displayToggleFlag = true;
-  
+
 @Input() public state: string;
 title: string;
 
 
 ngOnChanges(changes) {
- this.changeTitle()
+ this.changeTitle();
 }
 
 
-  constructor(private midataService :MidataService) { 
-    this.fhir = this.midataService.getMidataService();   
-    this.loginbuttonText = "Login";
+  constructor(private midataService: MidataService) {
+    this.fhir = this.midataService.getMidataService();
+    this.loginbuttonText = 'Login';
   }
 
   ngOnInit() {
@@ -42,18 +42,18 @@ ngOnChanges(changes) {
     };
   }
 
-  
-changeTitle(){
-  if(this.state == 'feelfinder'){
-    this.title = "Gefühlsfinder";
+
+changeTitle() {
+  if (this.state == 'feelfinder') {
+    this.title = 'Gefühlsfinder';
   }
-  if(this.state == 'diary'){
-    this.title = "Tagebuch";
+  if (this.state == 'diary') {
+    this.title = 'Tagebuch';
   }
 }
 
-login(){
-  if(this.fhir.isLoggedIn()){
+login() {
+  if (this.fhir.isLoggedIn()) {
     this.fhir.logout();
     this.checkLoginStatus();
   } else {
@@ -61,11 +61,11 @@ login(){
   }
 }
 
-  checkLoginStatus(){
-    if(this.fhir.isLoggedIn()){
-      this.loginbuttonText = "Logout";
+  checkLoginStatus() {
+    if (this.fhir.isLoggedIn()) {
+      this.loginbuttonText = 'Logout';
     } else {
-      this.loginbuttonText = "Login";
+      this.loginbuttonText = 'Login';
     }
   }
 
