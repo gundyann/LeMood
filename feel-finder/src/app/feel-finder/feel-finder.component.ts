@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
 import { ContentComponent } from '../content/content.component';
 import { JSOnFhir } from '@i4mi/js-on-fhir';
-import { MidataService } from '../midata.service';
-import { resultOfAuth } from '../resultOfAuth';
+import { MidataService } from '../../services/midata.service';
+import { resultOfAuth } from '../../interfaces/resultOfAuth';
 import { HeaderComponent } from '../header/header.component';
 
 @Component({

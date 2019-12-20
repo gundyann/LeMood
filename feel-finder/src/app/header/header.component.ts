@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { MidataService } from '../midata.service';
+import { MidataService } from '../../services/midata.service';
 import { JSOnFhir } from '@i4mi/js-on-fhir';
 
 

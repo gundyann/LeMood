@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MidataService } from '../midata.service';
+import { MidataService } from '../../services/midata.service';
 import { JSOnFhir } from '@i4mi/js-on-fhir';
+import { ResourceService } from '../../services/resource.service';
 
 @Component({
   selector: 'custom-diary',
@@ -14,7 +15,7 @@ export class DiaryComponent implements OnInit {
 
   fhir: JSOnFhir;
 
-  constructor(private midataService :MidataService) { 
+  constructor(private midataService :MidataService, private resourceService :ResourceService) { 
     this.fhir = this.midataService.getMidataService();
   }
 
@@ -40,6 +41,19 @@ export class DiaryComponent implements OnInit {
     console.log(diaryEntryText);
     console.log(this.tags);
     console.log(this.fhir.isLoggedIn());
+
+    let newCommentResource = this.resourceService.createCommentRessource(diaryEntryText);
+    this.fhir.create(newCommentResource)
+    .then(res => {
+      if(res){
+        console.log(res);
+        
+      }
+    })
+    .catch(err =>{
+      console.log(err);
+      
+    })
     
   }
 }

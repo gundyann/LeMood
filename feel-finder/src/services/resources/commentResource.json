@@ -11,5 +11,7 @@
         ],
         "text": "Diary Entry LeMood"
     },
-    "title": "Tagebucheintrag der LeMood App"
+    "effectiveDateTime":"",
+    "title": "Tagebucheintrag der LeMood App",
+    "valueString":""
 }
