@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit{
 
   fhir: JSOnFhir;
   loginbuttonText :string;
+  displayToggleFlag = true;
   
 @Input() public state: string;
 title: string;
@@ -30,6 +31,18 @@ ngOnChanges(changes) {
   ngOnInit() {
   }
 
+  policylightboxToggle() {
+    this.displayToggleFlag = !this.displayToggleFlag;
+  }
+
+ calculateClassesForPolicy() {
+    return {
+      'policy-lightbox-show': !this.displayToggleFlag,
+      'policy-lightbox-hide': this.displayToggleFlag
+    };
+  }
+
+  
 changeTitle(){
   if(this.state == 'feelfinder'){
     this.title = "Gefühlsfinder";
