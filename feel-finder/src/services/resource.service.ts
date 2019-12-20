@@ -52,11 +52,11 @@ export class ResourceService {
   private createTagsRessource(tags :string[]) :any{
     var newResource = tagsResource;
     newResource.effectiveDateTime = this.getTime();
+    
     var tagsAsString = "";
-    tags.forEach(tag => {
-      tagsAsString = tagsAsString  + " ";
-    });    
+    tags.forEach(tag => tagsAsString = tagsAsString + tag + " ");        
     newResource.valueString = tagsAsString;
+    
     return newResource;
   }
 

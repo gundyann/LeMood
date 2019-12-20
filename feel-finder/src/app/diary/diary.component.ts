@@ -38,12 +38,6 @@ export class DiaryComponent implements OnInit {
   }
 
   saveEntry(diaryEntryText:string){
-    console.log(diaryEntryText);
-    console.log(this.tags);
-    console.log(this.fhir.isLoggedIn());
-
-    this.resourceService.createDiaryRessource(diaryEntryText, this.tags);
-
-    
+    this.resourceService.createDiaryRessource(diaryEntryText, this.tags);    
   }
 }
