@@ -15,20 +15,19 @@ export class ResourceService {
   fhir: JSOnFhir;
 
 
-  constructor(private midataService :MidataService) { }
+  constructor(private midataService :MidataService) { 
+    this.fhir = this.midataService.getMidataService();
+  }
 
   createDiaryRessource(comment :string, tags :string[]){
     if(comment != ""){
       var commentRes = this.createCommentRessource(comment);
-      var idOfCommentRes = this.createResource(commentRes);
+      this.createResource(commentRes);
     }
     if (tags && tags.length) {   
       var tagsRes = this.createTagsRessource(tags);
-      var idOfTagsRes = this.createResource(tagsRes);
-    } 
-    console.log(idOfCommentRes);
-    console.log(idOfTagsRes);    
-    
+      this.createResource(tagsRes);
+    }     
   }
 
   private  createCommentRessource(comment :string) :any{
@@ -43,7 +42,7 @@ export class ResourceService {
     newResource.effectiveDateTime = this.getTime();
     var tagsAsString = "";
     tags.forEach(tag => {
-      tagsAsString = tagsAsString + tag.replace('#', '') + " ";
+      tagsAsString = tagsAsString  + " ";
     });    
     newResource.valueString = tagsAsString;
     return newResource;
@@ -55,24 +54,17 @@ export class ResourceService {
   }
 
 
-  private createResource(resource :any) :string{
-    let idOfNewResource;
+  private createResource(resource :any){
     this.fhir.create(resource)
     .then(res => {
       if(res){
         console.log(res);
         var result = <resource> res;
-        idOfNewResource = result.id;
+        console.log('id: '+ result.id);        
       }
     })
     .catch(err =>{
       console.log(err);
     })
-    return idOfNewResource;
   }
-
-
-
-
-
 }

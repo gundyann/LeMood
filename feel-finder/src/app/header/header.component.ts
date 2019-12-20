@@ -62,9 +62,6 @@ login(){
 }
 
   checkLoginStatus(){
-    console.log('we in checkStatus');  
-    console.log(this.fhir.isLoggedIn());    
-
     if(this.fhir.isLoggedIn()){
       this.loginbuttonText = "Logout";
     } else {
