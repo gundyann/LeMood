@@ -1,0 +1,21 @@
+{
+    "resourceType": "Composition",
+    "status": "final",
+    "type": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "61150-9",
+                "display": "Tagebucheintrag"
+            }
+        ]
+    },
+    "author": [
+        {
+            "reference": "none"
+        }
+    ],
+    "effectiveDateTime":"",
+    "title": "Tagebucheintrag der Feel-Finder App LeMood",
+    "section": []
+}

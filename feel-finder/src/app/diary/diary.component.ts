@@ -38,6 +38,14 @@ export class DiaryComponent implements OnInit {
   }
 
   saveEntry(diaryEntryText:string){
-    this.resourceService.createDiaryRessource(diaryEntryText, this.tags);    
+    this.resourceService.createDiaryRessource(diaryEntryText, this.tags)
+    .then( res => {
+      console.log(res);  
+      this.clearTags();
+      diaryEntryText = "";    
+    })   
+    .catch( err => {
+      console.log(err);      
+    })
   }
 }
