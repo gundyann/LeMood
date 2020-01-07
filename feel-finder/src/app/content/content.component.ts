@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, ViewChild, Output, EventEmitter } from '@angular/core';
 import { CardData } from '../card-data';
 import cardData from './gefuehlsfinder.json';
 import { State } from '../state';
 import { DiaryComponent } from '../diary/diary.component';
-
 
 
 @Component({
@@ -14,6 +13,7 @@ import { DiaryComponent } from '../diary/diary.component';
 export class ContentComponent implements OnInit {
 
   @ViewChild('diary', {static : false}) diary:DiaryComponent
+  @Output() entrySavedInDiary = new EventEmitter<string>();
 
 
 cards: any[];
@@ -77,6 +77,10 @@ visibleInfoTextFlag: boolean;
         this.infoText = "";
        }, 300);
     }, 800);   
+  }
+
+  entrySaved(){
+    this.entrySavedInDiary.emit();
   }
 
 

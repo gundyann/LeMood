@@ -4,6 +4,7 @@ import { JSOnFhir } from '@i4mi/js-on-fhir';
 import { MidataService } from '../../services/midata.service';
 import { resultOfAuth } from '../../interfaces/resultOfAuth';
 import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'custom-feel-finder',
@@ -17,6 +18,7 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('content', {static : false}) diary:ContentComponent
   @ViewChild('header', {static : false}) header:HeaderComponent;
+  @ViewChild('footer', {static : false}) footer:FooterComponent;
 
 
   state: string;
@@ -74,6 +76,10 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
     this.stateFlag = !this.stateFlag;
   }
 
+  entrySaved(){
+    this.footer.onClickSwitchState();
+  }
+
   addFeelingToDiary(newFeelingTag:string){
     this.diary.addTagToDiary(newFeelingTag);
   }
@@ -85,4 +91,5 @@ export class FeelFinderComponent implements OnInit, AfterViewInit {
       'state-diary': !this.stateFlag,
     }
   }
+
 }

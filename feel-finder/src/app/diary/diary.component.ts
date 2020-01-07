@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { MidataService } from '../../services/midata.service';
 import { JSOnFhir } from '@i4mi/js-on-fhir';
 import { ResourceService } from '../../services/resource.service';
@@ -13,6 +13,10 @@ export class DiaryComponent implements OnInit {
   tags: string[];
   noTagsText: string;
 
+  @ViewChild('diaryEntryText', {static : false}) textArea
+
+  @Output() entrySaved = new EventEmitter<string>();
+
   fhir: JSOnFhir;
 
   constructor(private midataService :MidataService, private resourceService :ResourceService) { 
@@ -21,7 +25,7 @@ export class DiaryComponent implements OnInit {
 
   ngOnInit() {
     this.tags = [];
-    this.noTagsText = "Der Eintrag hat noch keine Tags";    
+    this.noTagsText = "Der Eintrag hat noch keine Tags";   
   }
 
   pushToFeelings(feeling: string){
@@ -38,14 +42,24 @@ export class DiaryComponent implements OnInit {
   }
 
   saveEntry(diaryEntryText:string){
-    this.resourceService.createDiaryRessource(diaryEntryText, this.tags)
-    .then( res => {
-      console.log(res);  
-      this.clearTags();
-      diaryEntryText = "";    
-    })   
-    .catch( err => {
-      console.log(err);      
-    })
+
+    if(diaryEntryText == ""){
+      diaryEntryText = "Es wurde kein Kommentar erfasst.";
+    }
+
+    if(typeof this.tags !== 'undefined' && this.tags.length > 0 && diaryEntryText !== ""){
+      this.resourceService.createDiaryRessource(diaryEntryText, this.tags)
+      .then( res => {
+        console.log(res);
+        this.clearTags();
+        this.textArea.nativeElement.value = "";
+        this.entrySaved.emit();
+      })   
+      .catch( err => {
+        console.log(err);      
+      })
+    }
+    
+  
   }
 }

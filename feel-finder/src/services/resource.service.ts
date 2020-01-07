@@ -26,7 +26,7 @@ export class ResourceService {
         var commentRes = this.buildCommentRessource(comment);
       }
       if (tags && tags.length) {   
-        var tagsRes = this.buildTagsRessource(tags);
+        var tagsRes = this.buildTagsRessource(tags);   
       }     
       Promise.all([this.fhir.create(commentRes), this.fhir.create(tagsRes)])
       .then(res => {      

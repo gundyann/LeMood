@@ -21,8 +21,7 @@ export class FooterComponent implements OnInit {
     this.buttonText = "Zum Tagebuch";
   }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
   }
 
   onClickSwitchState(){   
