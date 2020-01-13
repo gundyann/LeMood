@@ -1,0 +1,236 @@
+ul{
+    padding: 0%;
+    list-style: none;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.content-feelings li{
+    display: flex;
+    flex: 0 50%;
+    margin-bottom: 5px; 
+    text-align: left;
+}
+.content-thoughts li{
+    display: list-item;
+    margin-bottom: 15px; 
+    width: 100%;
+    min-width: 100%;
+}
+
+.background-color-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 5px rgba(140, 140, 140, 1);
+
+}
+
+.card-content-wrapper{
+    display: grid;
+    grid-template-rows: 100%;
+    flex-grow: 1;
+}
+
+.thoughts-wrapper,
+.feelings-wrapper{
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    grid-column: 1;
+    grid-row: 1;
+}
+.thoughts-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thoughts-of-feeling{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.base-feeling-wrapper{
+    min-height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+
+   
+.feeling-title{
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.base-feeling-wrapper .arrow-up svg,
+.base-feeling-wrapper .arrow-down svg {
+    position: absolute;
+    top: 33px;
+    right: -5px;
+    bottom: 0;
+    height: 15px;
+    width: 15px;
+}
+.base-feeling-wrapper.animation-move-down .arrow-up svg,
+.base-feeling-wrapper.animation-move-up .arrow-down svg {
+    display: block;
+}
+.base-feeling-wrapper.animation-move-down .arrow-down svg,
+.base-feeling-wrapper.animation-move-up .arrow-up svg {
+    display: none;
+}
+
+.button-add-feeling-to-diary{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    max-width: 60px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(140,140,140,1);
+}
+
+.button-add-feeling-to-diary:active{
+    transform: translateY(4px);
+}
+
+.animation-wrapper{
+    grid-row: 1;
+    grid-column: 1;
+}
+.content-thoughts{
+    margin-top: -80px;
+}
+.content-feelings ul{
+    padding-top: 80px;
+}
+.content-feelings ul li .list-item{
+    font-size: 12px;
+    color: #595654;
+}
+
+.content-feelings ul li::before {
+    content: "\2022"; /* unicode for a bullet */
+    font-weight: 800;
+    width: 12px;
+    margin-left: 0px;
+}
+
+.animation-fade-in{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-delay: 220ms;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-fade-out{
+    opacity: 1;
+    animation-name: fadeOut;
+    animation-duration: 250ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-move-up{
+    animation-name: moveUp;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+.animation-move-down{
+    animation-name: moveDown;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveUp{
+    from{
+        transform: translateY(321px);
+    }
+    to{
+     transform: translateY(0px);
+     animation-timing-function: ease;
+   }
+}
+
+@keyframes moveDown{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+     transform: translateY(321px);
+     animation-timing-function: ease;
+ }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    @keyframes moveUp{
+        from{
+            transform: translateY(255px);
+        }
+        to{
+         transform: translateY(-15px);
+         animation-timing-function: ease;
+       }
+    }
+    
+    @keyframes moveDown{
+        from{
+            transform: translateY(-15px);
+        }
+        to{
+         transform: translateY(255px);
+         animation-timing-function: ease;
+     }
+    }
+    .base-feeling-wrapper{
+        min-height: 50px;
+        line-height: 50px;
+    }
+    ul{
+        margin-bottom: 0px;
+    }
+   
+    .content-feelings ul{
+        padding-top: 30px;
+        max-height: 250px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .content-feelings ul::-webkit-scrollbar {
+        display: none;
+    }
+    .base-feeling-wrapper .arrow-up svg,
+    .base-feeling-wrapper .arrow-down svg {
+        top: 19px;
+    }
+    .feeling-title h1{
+        font-weight: 600;
+    }
+
+}

@@ -1,0 +1,124 @@
+/* Load Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap');
+
+/* Font-sizes */
+html, body{
+    color: #595654;
+}
+html, body, *{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+h1{
+    font-size: 21px;
+    font-weight: 800;
+}
+h2,h3{
+    font-weight: 600;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 14px;
+}
+
+/* Abstände */
+.header-content-wrapper,
+.content-content-wrapper,
+.footer-content-wrapper {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+/* Buttons */
+.button-red, .button-blue, .button-neutral{
+    text-decoration: none;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-size: 12px;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: #ffffff;
+}
+.button-red:hover, .button-blue:hover, .button-neutral:hover{
+    opacity: 0.8;
+}
+.button-blue{
+    background-color: #4192D9;
+}
+.button-red{
+    background-color: #e73e34;
+}
+
+
+.medium-sized-button{
+    min-width: 105px;
+}
+/* Content */
+.feel-finder-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Ebenen definition für Schatten von Footer & Header */
+.header-content-wrapper,
+.footer-content-wrapper {
+    z-index: 2;
+}
+
+.header-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 75px;
+    order: 1;
+    justify-content: space-between;
+    z-index: 3;
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
+    box-shadow: 0px 4px 5px 0px rgba(200,200,200,0.4);
+}
+.content-content-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: rgba(243, 243, 243, 1);
+    order: 2;
+    flex-grow: 1;
+}
+.content-content-wrapper.state-feel-finder .diary-content{
+    display: none;
+}
+
+.content-content-wrapper.state-diary .feel-finder-content{
+    display: none;
+}
+
+.footer-content-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 75px;
+    order: 3;
+    -webkit-box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
+    -moz-box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
+    box-shadow: 0px -4px 5px 0px rgba(200,200,200,0.4);
+}
+
+@media only screen and (max-width:450px) {
+
+    .header-content-wrapper,
+    .footer-content-wrapper{
+        min-height: 65px;
+    }
+}

@@ -1,0 +1,68 @@
+.policy-lightbox{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+.policy-lightbox.policy-lightbox-hide{
+    display: none;
+}
+.policy-lightbox.policy-lightbox-show{
+    display: block;
+}
+.policy-lightbox .close{
+    position: absolute;
+    right: 0;
+    top: -30px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.policy-lightbox .policy-content{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 362px;
+    margin-top: -181px;
+    margin-left: -150px;
+    background-color: #ffffff
+}
+.policy-lightbox .policy-content-text{
+     margin: 20px;
+     text-align: left;
+}
+.policy-lightbox .button-blue{
+    margin-bottom: 20px;
+    width: auto;
+    display: inline-block;
+}
+.policy-lightbox .close,
+.policy-lightbox .button-blue:hover{
+    cursor: pointer;
+}
+
+.header-spacing-box{
+    display: flex;
+    justify-content: center;
+}
+.header-spacing-box:first-child{
+    justify-content: flex-start;
+}
+.header-spacing-box:last-child{
+    justify-content: flex-end;
+}
+
+.header-spacing-box h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+@media only screen and (max-width:450px) {
+
+    .header-spacing-box h3{
+        font-size: 14px;
+    }
+}

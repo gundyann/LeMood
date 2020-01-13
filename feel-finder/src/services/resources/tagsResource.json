@@ -1,0 +1,17 @@
+{
+    "resourceType": "Observation",
+    "status": "final",
+    "code": {
+        "coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "61150-9",
+                "display": "Tagebucheintrag"
+            }
+        ],
+        "text": "Diary Entry LeMood"
+    },
+    "effectiveDateTime":"",
+    "title": "Tagebucheintrag der LeMood App",
+    "valueString":""
+}

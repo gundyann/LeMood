@@ -1,0 +1,16 @@
+   <div [ngClass]="calculateClassesForPolicy()" class="policy-lightbox">
+      <div class="policy-content">
+         <a class="close" (click) = "policylightboxToggle()" >X</a>
+         <h2>Datenschutzerklärung</h2>
+         <div class="policy-content-text">
+            Mit der Bekanntgabe Ihrer Daten durch Registrierung als Gast oder zur Erstellung eines individuellen Kundenkontos und/oder durch die Nutzung unserer Webseiten ohne Registrierung bestätigen Sie, dass Sie die vorliegende Datenschutzerklärung kennen und im Rahmen und im Umfang der darin beschriebenen Zwecke einwilligen in die Erhebung, Bearbeitung, Verwendung und Weitergabe Ihrer Daten.
+         </div>
+         <a class="button-blue" (click) = "policylightboxToggle()" >
+            Gelesen und verstanden
+         </a>
+      </div>
+   </div>
+   <div class="header-spacing-box"><a class="header-tutorial button-blue" (click) = "login()">{{loginbuttonText}}</a></div>
+   <div class="header-spacing-box"><h3>{{title}}</h3></div>
+   <div class="header-spacing-box"><a href="#" class="header-policy button-blue" (click) = "policylightboxToggle()">Datenschutz</a></div>
+

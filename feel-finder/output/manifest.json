@@ -1,0 +1,22 @@
+{
+  "name": "FeelFinder - LeMood",
+  "short_name": "LeMood",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "./web_logo_192px.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./web_logo_512px.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "splash_pages": null
+}
